@@ -1,0 +1,37 @@
+version: '2'
+services:
+    postgres:
+        image: postgres
+        container_name: pg1
+        ports:
+            - "5432:5432"
+        volumes:
+            - ./postgres/data:/var/lib/postgresql/data/:Z
+        restart: always
+    django:
+        build: ./django
+        container_name: dg1
+        command: bash -c "sleep 5 ; python manage.py makemigrations && python manage.py migrate && gunicorn taskmngr.wsgi -b 0.0.0.0:8000"
+        # WORKAROUND without sleep() django can't connect to database in time
+        #command: sh -c "sleep 5 ; python manage.py runserver 0.0.0.0:8000"
+        volumes:
+            - ./django:/django:Z
+        expose:
+            - "8000"
+        #depends_on:
+        #    - postgres
+        #    - nginx
+        links:
+            - postgres
+    nginx:
+        image: nginx
+        container_name: ng1
+        ports:
+            - "8000:8000"
+        volumes:
+            - ./nginx/config:/etc/nginx/conf.d/:Z
+        volumes_from:
+            - django
+        links:
+            - django
+        restart: always
