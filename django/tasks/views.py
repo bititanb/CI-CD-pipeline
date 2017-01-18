@@ -2,7 +2,7 @@ from django.core.urlresolvers import reverse_lazy
 from django.views import generic
 #from django.shortcuts import render
 
-from tasks import models, forms
+from tasks import models
 
 class TaskList(generic.ListView):
     model = models.Task
@@ -12,6 +12,7 @@ class TaskList(generic.ListView):
 class TaskAdd(generic.CreateView):
     model = models.Task
     template_name = 'tasks/taskadd.html'
+    #fields = ['title', 'is_closed']
     fields = '__all__'
     success_url = reverse_lazy('tasklist')
 
