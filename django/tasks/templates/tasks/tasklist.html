@@ -1,0 +1,27 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+<div class='container'>
+    <div class='row'>
+    <table class='table table-bordered table-condensed'>
+        <tr>
+            <th>ID</th>
+            <th>title</th>
+            <th>category</th>
+            <th>timeframe</th>
+            <th>is_closed</th>
+        </tr>
+
+        {% for task in object_list %}
+        <tr>
+            <td><a href="{% url 'taskupdate' pk=task.id %}">{{ task.id }}</a></td>
+            <td>{{ task.title }}</td>
+            <td>{{ task.category }}</td>
+            <td>{{ task.timeframe }}</td>
+            <td>{{ task.is_closed }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+</div>
+{% endblock %}

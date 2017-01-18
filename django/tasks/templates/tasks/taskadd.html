@@ -1,0 +1,22 @@
+work-station-create.html
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save" />
+</form>
+{{ form|pprint }}
+{{ workstation_list|pprint }}
+{{ object_list|pprint }}
+{{ objects_list|pprint }}
+{% if workstation_list %}
+    <ul>
+    {% for object in object_list %}
+        <b>{{ object.uid }}</b>
+        <b>{{ object.host_name }}</b>
+        {% comment %}
+        <li><a href="/web/{{ pk }}/">{{ device.device_id_field }}</a></li>
+        {% endcomment %}
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Error. oobject_list return false</p>
+{% endif %}
