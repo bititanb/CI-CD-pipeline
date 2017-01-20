@@ -1,0 +1,9 @@
+[
+    {
+        "model": "tasks.category",
+        "pk": 1,
+        "fields": {
+            "title": "General"
+        }
+    }
+]

@@ -12,7 +12,7 @@ class TaskList(generic.ListView):
 class TaskAdd(generic.CreateView):
     model = models.Task
     template_name = 'tasks/taskadd.html'
-    #fields = ['title', 'is_closed']
+    #fields = ['title', 'is_closed', 'timeframe']
     fields = '__all__'
     success_url = reverse_lazy('tasklist')
 

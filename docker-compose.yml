@@ -6,7 +6,7 @@ services:
         ports:
             - "5432:5432"
         volumes:
-            - ./postgres/data:/var/lib/postgresql/data/:Z
+            - ./postgres/data:/var/lib/postgresql/data/:z
         restart: always
     django:
         build: ./django
@@ -15,8 +15,8 @@ services:
         # WORKAROUND without sleep() django can't connect to database in time
         #command: sh -c "sleep 5 ; python manage.py runserver 0.0.0.0:8000"
         volumes:
-            - ./django:/django:Z
-            - ./static:/static:Z
+            - ./django:/django:z
+            - ./static:/static:z
         expose:
             - "8000"
         #depends_on:
@@ -31,7 +31,7 @@ services:
         ports:
             - "8000:8000"
         volumes:
-            - ./nginx/config:/etc/nginx/conf.d/:Z
+            - ./nginx/config:/etc/nginx/conf.d/:z
         volumes_from:
             - django
         links:
