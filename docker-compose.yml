@@ -11,7 +11,7 @@ services:
     django:
         build: ./django
         container_name: dg1
-        command: bash -c "sleep 5 ; python manage.py makemigrations && python manage.py migrate && gunicorn taskmngr.wsgi -b 0.0.0.0:8000"
+        command: bash -c "sleep 5 ; python manage.py collectstatic --no-input && python manage.py makemigrations && python manage.py migrate && gunicorn taskmngr.wsgi -b 0.0.0.0:8000"
         # WORKAROUND without sleep() django can't connect to database in time
         #command: sh -c "sleep 5 ; python manage.py runserver 0.0.0.0:8000"
         volumes:
