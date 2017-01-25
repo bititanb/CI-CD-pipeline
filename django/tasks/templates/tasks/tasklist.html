@@ -3,12 +3,18 @@
 {% block content %}
 
 <div class="container">
-    <div class="row-fluid row-offcanvas row-offcanvas-left">
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-            CATEGORIES
+    <div class="row-fluid">
+        <div class="hidden-xs col-xs-6 col-sm-3">
+            CATEGORIES:<p>
+                {% for category in categories %}
+                {{ category.title }}
+                {% endfor %}
         </div>
         <div class="col-xs-12 col-sm-6">
-            TASKS
+            TASKS:<p>
+            {% for task in tasks %}
+            {{ task.title }}
+            {% endfor %}
         </div>
         <div class="col-xs-12 col-sm-3">
             NEW TASK
@@ -16,7 +22,18 @@
     </div>
 </div>
 
+
 <!--
+        {% for task in object_list %}
+        <tr>
+            <td><a href="{% url 'taskupdate' pk=task.id %}">{{ task.id }}</a></td>
+            <td>{{ task.title }}</td>
+            <td>{{ task.category }}</td>
+            <td>{{ task.timeframe }}</td>
+            <td>{{ task.is_closed }}</td>
+        </tr>
+        {% endfor %}
+
 <div class="container">
 
       <div class="row row-offcanvas row-offcanvas-right">

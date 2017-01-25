@@ -10,32 +10,56 @@
 {# block just before closing </head> #}
 {% block bootstrap3_extra_head %}
 <link href='{% static "tasks/css/base.css" %}' rel="stylesheet">
-<link href='{% static "tasks/css/offcanvas.css" %}' rel="stylesheet">
+<link href='{% static "tasks/css/dropdowns-enhancement.css" %}' rel="stylesheet">
 {% endblock %}
 
 {% block bootstrap3_content %}
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{% url 'tasklist'%}">taskmngr</a>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'tasklist'%}">taskmngr</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'tasklist' %}">Tasks</a></li>
+                <li class="hidden-sm hidden-md hidden-lg dropdown"> <a href="#" data-toggle="dropdown">Categories <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu"><a href="#"  data-toggle="dropdown">Action</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" >Sub Action</a></li>
+                                <li class="dropdown-submenu"><a href="#"  data-toggle="dropdown">Another sub action</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#" >Sub Action</a></li>
+                                        <li><a href="#" >Another sub action</a></li>
+                                        <li><a href="#" >Something else here</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" >Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu"><a href="#"  data-toggle="dropdown">Another action</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" >Sub Action</a></li>
+                                <li><a href="#" >Another sub action</a></li>
+                                <li><a href="#" >Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" >Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" >Separated link</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="{% url 'tasklist' %}">Tasks</a></li>
-        <li class="hidden-sm hidden-md hidden-lg"><a href="#" role="button" data-toggle="offcanvas">Categories</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
 </nav>
 
 <!--
@@ -55,5 +79,5 @@
 
 {# block just before closing </body> #}
 {% block bootstrap3_extra_script %}
-<script src='{% static "tasks/js/offcanvas.js" %}'></script>
+<script src='{% static "tasks/js/dropdowns_enhancement.js" %}'></script>
 {% endblock %}
