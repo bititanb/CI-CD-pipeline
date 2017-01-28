@@ -2,6 +2,7 @@ from django.core.urlresolvers import reverse_lazy
 from django.views import generic
 #from django.shortcuts import render
 from django.utils import timezone
+from django.shortcuts import get_object_or_404
 
 from tasks import models
 
@@ -10,10 +11,14 @@ class TaskList(generic.DetailView):
     template_name = 'tasks/tasklist.html'
     fields = '__all__'
 
-    def get_queryset(self):
-        return models.Task.objects.filter(category=self.kwargs['slug'])
+    def get_object(self):
+        category = get_object_or_404(models.Category, title__iexact=self.kwargs['slug'])
+        return models.Task.objects.filter(category=category)
 
     def get_context_data(self, **kwargs):
+        #import pudb; pudb.set_trace()
+        #import ipdb; ipdb.set_trace()
+
         context = super(TaskList, self).get_context_data(**kwargs)
         context['categories'] = models.Category.objects.all()
         return context
@@ -35,3 +40,4 @@ class TaskDelete(generic.DeleteView):
     model = models.Task
     template_name = 'tasks/taskdelete.html'
     success_url = reverse_lazy('tasklist')
+

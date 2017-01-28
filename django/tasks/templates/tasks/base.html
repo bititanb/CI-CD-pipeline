@@ -9,12 +9,12 @@
 
 {# block just before closing </head> #}
 {% block bootstrap3_extra_head %}
-<link href='{% static "tasks/css/base.css" %}' rel="stylesheet">
-<link href='{% static "tasks/css/dropdowns-enhancement.css" %}' rel="stylesheet">
+    <link href='{% static "tasks/css/base.css" %}' rel="stylesheet">
+    <link href='{% static "tasks/css/dropdowns-enhancement.css" %}' rel="stylesheet">
 {% endblock %}
 
 {% block bootstrap3_content %}
-
+{% url 'tasklist' slug=view.kwargs.slug as tasklist %}
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -23,11 +23,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{% url 'tasklist'%}">taskmngr</a>
+            <a class="navbar-brand" href="{{ tasklist }}">taskmngr</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{% url 'tasklist' %}">Tasks</a></li>
+                <li><a href="{{ tasklist }}">Tasks</a></li>
                 <li class="hidden-sm hidden-md hidden-lg dropdown"> <a href="#" data-toggle="dropdown">Categories <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li class="dropdown-submenu"><a href="#"  data-toggle="dropdown">Action</a>
@@ -62,22 +62,12 @@
     </div>
 </nav>
 
-<!--
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <ul class="nav navbar-nav">
-                <li><a href="{% url 'tasklist' %}">Tasklist</a></li>
-                <li class="hidden-sm hidden-md hidden-lg"><a href="#" role="button" data-toggle="offcanvas">offcanvas</a></li>
-            </ul>
-        </div>
-    </nav>
--->
+{% block content %}
+{% endblock %}
 
-    {% block content %}
-    {% endblock %}
 {% endblock %}
 
 {# block just before closing </body> #}
 {% block bootstrap3_extra_script %}
-<script src='{% static "tasks/js/dropdowns_enhancement.js" %}'></script>
+    <script src='{% static "tasks/js/dropdowns_enhancement.js" %}'></script>
 {% endblock %}
