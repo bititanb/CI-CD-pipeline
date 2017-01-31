@@ -5,3 +5,4 @@ django-bootstrap3
 django-debug-toolbar
 ipdb
 pudb
+git+http://github.com/AndrewIngram/django-extra-views

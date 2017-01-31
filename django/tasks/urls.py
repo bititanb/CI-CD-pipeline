@@ -1,11 +1,15 @@
 from django.conf.urls import url
 
-from tasks import views
+from .views import *
 
 urlpatterns = [
-    url(r'^category/(?P<slug>[-\w\d]+)/$', views.TaskList.as_view(), name='tasklist'),
-    url(r'^recipe/create/$', views.RecipeCreateView.as_view(), name='recipecreateview'),
-    url(r'^add/$', views.TaskAdd.as_view(), name='taskadd'),
-    url(r'^(?P<pk>\d+)/$', views.TaskUpdate.as_view(), name='taskupdate'),
-    url(r'^(?P<pk>\d+)/delete/$', views.TaskDelete.as_view(), name='taskdelete'),
+    url(r'^category/(?P<pk>\d+)-(?P<slug>[-\w\d]+)/$', TaskList.as_view(), name='tasklist'),
+    url(r'^categories/create$', CategoryCreate.as_view(), name='categorycreate'),
+    url(r'^categories/(?P<pk>\d+)-(?P<slug>[-\w\d]+)/$', CategoryUpdate.as_view(), name='categoryupdate'),
+    url(r'^categories/$', CategoryList.as_view(), name='categorylist'),
+    url(r'^categories/(?P<pk>\d+)-(?P<slug>[-\w\d]+)/delete$', CategoryDelete.as_view(), name='categorydelete'),
+    #url(r'^recipe/create/$', RecipeCreateView.as_view(), name='recipecreateview'),
+    #url(r'^add/$', TaskAdd.as_view(), name='taskadd'),
+    #url(r'^(?P<pk>\d+)/$', TaskUpdate.as_view(), name='taskupdate'),
+    #url(r'^(?P<pk>\d+)/delete/$', TaskDelete.as_view(), name='taskdelete'),
 ]

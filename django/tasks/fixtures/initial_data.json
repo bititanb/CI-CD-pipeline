@@ -3,7 +3,32 @@
         "model": "tasks.category",
         "pk": 1,
         "fields": {
-            "title": "General"
+            "title": "General",
+            "slug": "general"
+        }
+    },
+    {
+        "model": "tasks.task",
+        "pk": 1,
+        "fields": {
+            "title": "task1_title",
+            "body": "task1_body",
+            "is_closed": "True",
+            "slug": "task1_title",
+            "category": "1",
+            "timeframe": "0"
+        }
+    },
+    {
+        "model": "tasks.task",
+        "pk": 2,
+        "fields": {
+            "title": "task2_title",
+            "body": "task2_body",
+            "is_closed": "True",
+            "slug": "task2_title",
+            "category": "1",
+            "timeframe": "1"
         }
     }
 ]

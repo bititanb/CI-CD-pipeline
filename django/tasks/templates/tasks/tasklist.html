@@ -1,6 +1,8 @@
 {% extends 'tasks/base.html' %}
 
 {% block content %}
+
+{% comment %}
 <div class="container">
     <div class="row-fluid">
         <div class="hidden-xs col-xs-6 col-sm-3">
@@ -26,7 +28,6 @@
     </div>
 </div>
 
-{% comment %}
 
         {% for task in object_list %}
         <tr>
