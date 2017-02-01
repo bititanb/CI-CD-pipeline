@@ -5,7 +5,7 @@ from django.db import models
 
 class Category(models.Model):
     title = models.CharField(max_length=20, unique=True)
-    slug = models.SlugField()
+    slug = models.SlugField(editable=False)
 
     #def slug(self):
     #    return slugify(self.title)
@@ -14,13 +14,15 @@ class Category(models.Model):
         self.slug = slugify(self.title)
         super(Category, self).save(*args, **kwargs)
 
+    def __unicode__(self):
+        return self.title
+
 class Task(models.Model):
     title = models.CharField(max_length=20, unique=True)
-    body = models.TextField(max_length=200)
-    is_closed = models.BooleanField()
-    slug = models.SlugField()
+    body = models.TextField(max_length=200, blank=True)
+    slug = models.SlugField(editable=False)
 
-    category = models.ForeignKey('Category', on_delete=models.CASCADE)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE, blank=False)
 
     NOW = 0
     LATER = 1
@@ -36,6 +38,8 @@ class Task(models.Model):
         self.slug = slugify(self.title)
         super(Task, self).save(*args, **kwargs)
 
+    def __unicode__(self):
+        return self.title
 
 #class Comment(models.Model):
 #    text = models.TextField(max_length=300)

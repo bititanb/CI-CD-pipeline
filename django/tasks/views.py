@@ -13,7 +13,17 @@ class TaskList(InlineFormSetView):
     template_name = 'tasks/test.html'
     model = Category
     inline_model = Task
-    fields = '__all__'
+    form_class = TaskForm
+    extra = 1
+
+    # DEBUG
+    def get_context_data(self, **kwargs):
+        #import pudb; pudb.set_trace()
+        return super(TaskList, self).get_context_data(**kwargs)
+
+    #def get_initial(self, **kwargs):
+    #    import pudb; pudb.set_trace()
+    #    return [{'body': self.model.title } for i in range(self.extra)]
 
     #template_name = 'tasks/tasklist.html'
     #context_object_name = 'tasks'

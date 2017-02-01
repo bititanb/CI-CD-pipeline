@@ -3,21 +3,36 @@
 
 {% block content %}
 
-test.html
-
-
 <div class="container">
     <div class="row">
         <div class="col-md-10">
+            <form method="post" action="">
+            {% csrf_token %}
+            {{ formset.management_form  }}
             <table class="table table-condensed">
-                    {% for form in formset.forms %}
-                <tr>
-                        {% for field in form %}
-                        <td>{% bootstrap_field field %}</td>
+                <thead>
+                    {% for form in formset %}
+                        {% if forloop.first %}
+                            {% for field in form.visible_fields %}
+                                <th>{{ field.label_tag }}</th>
+                            {% endfor %}
+                        {% endif %}
+                        {% for hidden in form.hidden_fields %}
+                            {{ hidden }}
                         {% endfor %}
-                </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            {% for field in form.visible_fields %}
+                                <td>{% bootstrap_field field show_label=False %}</td>
+                            {% endfor %}
+                        </tr>
                     {% endfor %}
+                </tbody>
+
             </table>
+            <input class="button" type="submit" value="submit" />
+            </form>
         </div>
     </div>
 </div>

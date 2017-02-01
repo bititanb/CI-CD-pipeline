@@ -30,7 +30,7 @@ services:
         #    - nginx
         links:
             - postgres
-        #restart: always
+        restart: always
     nginx:
         image: nginx
         container_name: ng1

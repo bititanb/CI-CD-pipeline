@@ -8,12 +8,19 @@
         }
     },
     {
+        "model": "tasks.category",
+        "pk": 2,
+        "fields": {
+            "title": "Test2",
+            "slug": "test2"
+        }
+    },
+    {
         "model": "tasks.task",
         "pk": 1,
         "fields": {
             "title": "task1_title",
             "body": "task1_body",
-            "is_closed": "True",
             "slug": "task1_title",
             "category": "1",
             "timeframe": "0"
@@ -25,7 +32,6 @@
         "fields": {
             "title": "task2_title",
             "body": "task2_body",
-            "is_closed": "True",
             "slug": "task2_title",
             "category": "1",
             "timeframe": "1"
