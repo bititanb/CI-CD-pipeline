@@ -4,17 +4,24 @@ from django.views import generic
 from django.utils import timezone
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
-from extra_views import InlineFormSetView
+import extra_views
 
 from .models import *
 from .forms import *
 
-class TaskList(InlineFormSetView):
+class TaskList(extra_views.ModelFormSetView):
     template_name = 'tasks/test.html'
-    model = Category
-    inline_model = Task
-    form_class = TaskForm
+    model = Task
+    #inline_model = Task
+    #form_class = TaskForm
     extra = 1
+    fields = ('title', 'body', 'timeframe', 'category')
+    can_delete = True
+    widgets = {
+        'body': forms.Textarea(attrs={'rows':1}),
+    }
+
+
 
     # DEBUG
     def get_context_data(self, **kwargs):
