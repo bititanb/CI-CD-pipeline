@@ -21,8 +21,8 @@ class Category(models.Model):
         return self.title
 
 class Task(models.Model):
-    title = models.CharField(max_length=20, unique=True)
-    body = models.TextField(max_length=200, blank=True)
+    title = models.CharField(max_length=20, editable=False)
+    body = models.TextField(max_length=500, blank=False)
     slug = models.SlugField(editable=False)
 
     #import pudb; pudb.set_trace()
@@ -39,6 +39,7 @@ class Task(models.Model):
     timeframe = models.IntegerField(choices=TIMEFRAMES, default=NOW)
 
     def save(self, *args, **kwargs):
+        self.title = (self.body[:15]) if len(self.body) > 15 else self.body
         self.slug = slugify(self.title)
         super(Task, self).save(*args, **kwargs)
 

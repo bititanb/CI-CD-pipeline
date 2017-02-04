@@ -4,37 +4,38 @@
 {% block content %}
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-10">
-            <form method="post" action="">
-            {% csrf_token %}
-            {{ formset.management_form  }}
-            <table class="table table-condensed">
-                <thead>
-                    {% for form in formset %}
-                        {% if forloop.first %}
-                            {% for field in form.visible_fields %}
-                                <th>{{ field.label_tag }}</th>
-                            {% endfor %}
-                        {% endif %}
-                        {% for hidden in form.hidden_fields %}
-                                {{ hidden }}
+  <div class="row">
+    <div class="col-md-12">
+      <form method="post" action="">
+        {% csrf_token %}
+        {{ formset.management_form  }}
+          <table class="table table-condensed">
+            <thead>
+                    {% for field in formset.0.visible_fields %}
+                      {% if field.name == 'DELETE' %}
+                        <th>{% bootstrap_label 'Delete' label_class='text-align-center' %}</th>
+                      {% else %}
+                      <th>{% bootstrap_label field.label label_class='text-align-center' %}</th>
+                      {% endif %}
                     {% endfor %}
-                </thead>
-                <tbody>
-                        <tr>
-                            {% for field in form.visible_fields %}
-                                <td>{% bootstrap_field field show_label=False %}</td>
-                            {% endfor %}
-                        </tr>
-                    {% endfor %}
-                </tbody>
-
-            </table>
-            <input class="button" type="submit" value="submit" />
-            </form>
-        </div>
+            </thead>
+            <tbody>
+              {% for form in formset %}
+                <tr>
+                  {% for field in form.visible_fields %}
+                    <td>{% bootstrap_field field show_label=False %}</td>
+                  {% endfor %}
+                  {% for hidden in form.hidden_fields %}
+                    {{ hidden }}
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        <input class="button" type="submit" value="submit" />
+      </form>
     </div>
+  </div>
 </div>
 
 {% endblock %}

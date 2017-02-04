@@ -1,6 +1,6 @@
 from django import forms
-from django.forms.models import inlineformset_factory
-#from extra_views import InlineFormSet
+from django.forms.formsets import DELETION_FIELD_NAME
+
 
 from .models import *
 
@@ -9,17 +9,29 @@ from .models import *
 #        model = Category
 #        fields = '__all__'
 
-#class TaskForm(forms.ModelForm):
-#    import pudb; pudb.set_trace()
-#    categories = forms.ModelChoiceField(queryset=Category.objects.all(), empty_label=None)
-#
-#    class Meta:
-#        model = Task
-#        fields = ('title', 'body', 'categories', 'timeframe', 'category')
-#        #exclude = ('category',)
-#        widgets = {
-#            'body': forms.Textarea(attrs={'rows':1})
-#        }
+class TaskForm(forms.ModelForm):
+    #import pudb; pudb.set_trace()
+    #categories = forms.ModelChoiceField(queryset=Category.objects.all(), empty_label=None)
+
+    class Meta:
+        model = Task
+        fields= '__all__'
+        widgets = {
+            'body': forms.Textarea(attrs={'rows':1}),
+        }
+        labels = {
+            'body': 'What',
+            'timeframe': 'When',
+        }
+
+class TaskModelFormSet(forms.BaseModelFormSet):
+
+    def add_fields(self, form, index):
+        super(TaskModelFormSet, self).add_fields(form, index)
+        #import pudb; pudb.set_trace()
+        form.fields[DELETION_FIELD_NAME].label = ''
+
+#TaskFormSet = forms.modelformset_factory(Task, fields='__all__', formset=TaskModelFormSet)
 
 #class TaskInlineFormSet(InlineFormSet):
 #    model = Task

@@ -13,13 +13,20 @@ class TaskList(extra_views.ModelFormSetView):
     template_name = 'tasks/test.html'
     model = Task
     #inline_model = Task
-    #form_class = TaskForm
+    form_class = TaskForm
+    formset_class = TaskModelFormSet
+
     extra = 1
-    fields = ('title', 'body', 'timeframe', 'category')
     can_delete = True
-    widgets = {
-        'body': forms.Textarea(attrs={'rows':1}),
-    }
+    #fields = ('body', 'timeframe', 'category',)
+    #fields = '__all__'
+    #fields = ('body', 'timeframe', 'category')
+    #widgets = {
+    #    'body': forms.Textarea(attrs={'rows':1}),
+    #}
+    #widgets = {
+    #    'body': forms.Textarea(attrs={'rows':1}),
+    #}
 
 
 
