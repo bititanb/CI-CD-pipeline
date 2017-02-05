@@ -1,32 +1,36 @@
 from __future__ import unicode_literals
 from django.template.defaultfilters import slugify
+from django import urls
 
 from django.db import models
 
-def get_default_category():
-    return Category.objects.get(id=1)
+#def get_default_category():
+#    return Category.objects.get(id=1)
 
 class Category(models.Model):
     title = models.CharField(max_length=20, unique=True)
     slug = models.SlugField(editable=False)
+    #url = models.URLField(editable=False)
 
     #def slug(self):
     #    return slugify(self.title)
+
+    def __unicode__(self):
+        return self.title
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(Category, self).save(*args, **kwargs)
 
-    def __unicode__(self):
-        return self.title
+    def get_absolute_url(self):
+        return urls.reverse('tasklist_by_category', kwargs={'pk': self.pk, 'slug': self.slug})
 
 class Task(models.Model):
     title = models.CharField(max_length=20, editable=False)
     body = models.TextField(max_length=500, blank=False)
     slug = models.SlugField(editable=False)
 
-    #import pudb; pudb.set_trace()
-    category = models.ForeignKey('Category', on_delete=models.SET_DEFAULT, blank=False, default=get_default_category)
+    category = models.ForeignKey('Category', blank=False)
 
     NOW = 0
     LATER = 1

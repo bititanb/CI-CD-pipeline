@@ -9,30 +9,37 @@
       <form method="post" action="">
         {% csrf_token %}
         {{ formset.management_form  }}
-          <table class="table table-condensed">
-            <thead>
-                    {% for field in formset.0.visible_fields %}
-                      {% if field.name == 'DELETE' %}
-                        <th>{% bootstrap_label 'Delete' label_class='text-align-center' %}</th>
-                      {% else %}
-                      <th>{% bootstrap_label field.label label_class='text-align-center' %}</th>
-                      {% endif %}
-                    {% endfor %}
-            </thead>
-            <tbody>
-              {% for form in formset %}
-                <tr>
-                  {% for field in form.visible_fields %}
-                    <td>{% bootstrap_field field show_label=False %}</td>
-                  {% endfor %}
-                  {% for hidden in form.hidden_fields %}
-                    {{ hidden }}
-                  {% endfor %}
-                </tr>
+        <table class="table table-condensed">
+          <thead>
+            {% for field in formset.0.visible_fields %}
+            {% if field.name == 'DELETE' %}
+            <th>{% bootstrap_label 'Remove' label_class='text-align-center' %}</th>
+            {% else %}
+            <th>{% bootstrap_label field.label label_class='text-align-center' %}</th>
+            {% endif %}
+            {% endfor %}
+          </thead>
+          <tbody>
+            {% for form in formset %}
+            <tr>
+              {% for field in form.visible_fields %}
+              <td>{% bootstrap_field field show_label=False %}</td>
               {% endfor %}
-            </tbody>
-          </table>
-        <input class="button" type="submit" value="submit" />
+              {% for hidden in form.hidden_fields %}
+              {{ hidden }}
+              {% endfor %}
+            </tr>
+            {% endfor %}
+            <tr>
+              <td></td>
+              <td></td>
+              <td class='td-button-confirm'>
+                {% bootstrap_button button_type='submit' content='Update' button_class='btn-success' size='medium' value='submit' %}
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
       </form>
     </div>
   </div>

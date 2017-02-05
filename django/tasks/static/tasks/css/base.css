@@ -25,17 +25,43 @@ textarea {
     display: block;
 }
 
+.cell-text-align-center {
+    text-align: center;
+    display: table-cell;
+}
+
+.text-align-right {
+    text-align: right;
+    display: block;
+}
+
+.cell-text-align-right {
+    text-align: right;
+    display: table-cell;
+}
+
+.td-button-confirm {
+    padding-top: 20px !important;
+    text-align: right;
+    display: table-cell;
+}
+
 .form-group {
     margin-bottom: 0;
     text-align: center !important;
 }
 
 td, th {
-    vertical-align: middle !important;
+    //vertical-align: middle !important;
     border: none !important;
 }
 
 .checkbox label {
     display: block;
     padding-left: 30px;
+}
+
+div.navbar-header > ul.nav {
+    margin-left: 0;
+    margin-right: 0;
 }

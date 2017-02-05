@@ -1,35 +1,42 @@
 from django import forms
 from django.forms.formsets import DELETION_FIELD_NAME
 
-
 from .models import *
 
-#class CategoryForm(forms.ModelForm):
-#    class Meta:
-#        model = Category
-#        fields = '__all__'
-
 class TaskForm(forms.ModelForm):
-    #import pudb; pudb.set_trace()
     #categories = forms.ModelChoiceField(queryset=Category.objects.all(), empty_label=None)
 
     class Meta:
         model = Task
         fields= '__all__'
         widgets = {
-            'body': forms.Textarea(attrs={'rows':1}),
+            'body': forms.Textarea(attrs={'rows': 1, 'placeholder': ''}),
         }
         labels = {
-            'body': 'What',
-            'timeframe': 'When',
+            'body': 'Task',
+            'timeframe': 'Date',
         }
 
-class TaskModelFormSet(forms.BaseModelFormSet):
+class CategoryForm(forms.ModelForm):
+    class Meta:
+        model = Category
+        fields= '__all__'
+        labels = {
+            'title': 'Category',
+        }
 
+
+class DeletionFieldLabelEmptyMixin(object):
     def add_fields(self, form, index):
-        super(TaskModelFormSet, self).add_fields(form, index)
-        #import pudb; pudb.set_trace()
+        super(DeletionFieldLabelEmptyMixin, self).add_fields(form, index)
         form.fields[DELETION_FIELD_NAME].label = ''
+
+class TaskModelFormSet(DeletionFieldLabelEmptyMixin, forms.BaseModelFormSet):
+    pass
+
+class CategoryModelFormSet(DeletionFieldLabelEmptyMixin, forms.BaseModelFormSet):
+    pass
+
 
 #TaskFormSet = forms.modelformset_factory(Task, fields='__all__', formset=TaskModelFormSet)
 

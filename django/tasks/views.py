@@ -12,54 +12,52 @@ from .forms import *
 class TaskList(extra_views.ModelFormSetView):
     template_name = 'tasks/test.html'
     model = Task
-    #inline_model = Task
     form_class = TaskForm
     formset_class = TaskModelFormSet
-
     extra = 1
     can_delete = True
-    #fields = ('body', 'timeframe', 'category',)
-    #fields = '__all__'
-    #fields = ('body', 'timeframe', 'category')
-    #widgets = {
-    #    'body': forms.Textarea(attrs={'rows':1}),
-    #}
-    #widgets = {
-    #    'body': forms.Textarea(attrs={'rows':1}),
-    #}
-
-
 
     # DEBUG
     def get_context_data(self, **kwargs):
         #import pudb; pudb.set_trace()
         return super(TaskList, self).get_context_data(**kwargs)
 
-    #def get_initial(self, **kwargs):
-    #    import pudb; pudb.set_trace()
-    #    return [{'body': self.model.title } for i in range(self.extra)]
+    def get_queryset(self):
+        if self.kwargs['slug'] == 'all':
+            return Task.objects.all().order_by('timeframe', 'category')
+        else:
+            category = get_object_or_404(Category, slug__iexact=self.kwargs['slug'])
+            return Task.objects.filter(category=category).order_by('timeframe', 'category')
 
-    #template_name = 'tasks/tasklist.html'
-    #context_object_name = 'tasks'
-    #fields = '__all__'
+    #def get_object(self):
+    #    import pudb; pudb.set_trace()
+    #    if self.kwargs['slug'] == 'all':
+    #        return Task.objects.all()
+    #    else:
+    #        category = get_object_or_404(Category, slug__iexact=self.kwargs['slug'])
+    #        return Task.objects.filter(category=category)
 
     #def get_object(self):
     #    category = get_object_or_404(Category, title__iexact=self.kwargs['slug'])
     #    return Task.objects.filter(category=category)
 
     #def get_context_data(self, **kwargs):
-    #    #import pudb; pudb.set_trace()
-    #    #import ipdb; ipdb.set_trace()
-
     #    context = super(TaskList, self).get_context_data(**kwargs)
     #    context['categories'] = Category.objects.all()
     #    return context
 
-class CategoryList(generic.ListView):
+class CategoryList(extra_views.ModelFormSetView):
     model = Category
-    context_object_name = 'categories'
     template_name = 'tasks/categorylist.html'
-    fields = '__all__'
+    form_class = CategoryForm
+    formset_class = CategoryModelFormSet
+    extra = 1
+    can_delete = True
+
+    # DEBUG
+    def get_context_data(self, **kwargs):
+        return super(CategoryList, self).get_context_data(**kwargs)
+
 
 class CategoryCreate(generic.CreateView):
     model = Category
