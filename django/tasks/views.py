@@ -17,10 +17,10 @@ class TaskList(extra_views.ModelFormSetView):
     extra = 1
     can_delete = True
 
-    # DEBUG
     def get_context_data(self, **kwargs):
-        #import pudb; pudb.set_trace()
-        return super(TaskList, self).get_context_data(**kwargs)
+        context = super(TaskList, self).get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+        return context
 
     def get_queryset(self):
         if self.kwargs['slug'] == 'all':
@@ -40,11 +40,6 @@ class TaskList(extra_views.ModelFormSetView):
     #def get_object(self):
     #    category = get_object_or_404(Category, title__iexact=self.kwargs['slug'])
     #    return Task.objects.filter(category=category)
-
-    #def get_context_data(self, **kwargs):
-    #    context = super(TaskList, self).get_context_data(**kwargs)
-    #    context['categories'] = Category.objects.all()
-    #    return context
 
 class CategoryList(extra_views.ModelFormSetView):
     model = Category

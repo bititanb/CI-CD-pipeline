@@ -65,3 +65,29 @@ div.navbar-header > ul.nav {
     margin-left: 0;
     margin-right: 0;
 }
+
+.task-col {
+    width: 65%;
+    padding-left: 15px !important;
+}
+
+.date-col {
+    width: 15%;
+}
+
+.category-col {
+    width: 15%;
+}
+
+.delete-col {
+    width: 5%;
+    padding-right: 15px !important;
+}
+
+.main-container {
+    max-width: 1250px;
+}
+
+.table-main {
+    margin-top: 10px;
+}

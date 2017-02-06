@@ -5,8 +5,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-8">
+    <div class="col-sm-8 col-sm-offset-2">
       <form method="post" action="">
         {% csrf_token %}
         {{ formset.management_form  }}
@@ -25,7 +24,7 @@
             {% for form in formset %}
             <tr>
               {% if form.instance.pk != None %}
-              <td class="cell-text-align-center"><a href="">{% bootstrap_button button_type='link' content='Show' href=form.instance.get_absolute_url button_class='btn-success' size='small' %}</a></td>
+              <td class="cell-text-align-center">{% bootstrap_button button_type='link' content='Show' href=form.instance.get_absolute_url button_class='btn-success' size='small' %}</td>
               {% else %}
               <td></td>
               {% endif %}
@@ -48,7 +47,6 @@
         </table>
       </form>
     </div>
-    <div class="col-sm-2"></div>
   </div>
 </div>
 

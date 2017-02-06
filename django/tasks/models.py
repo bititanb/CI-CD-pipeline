@@ -40,7 +40,7 @@ class Task(models.Model):
         (LATER, 'Later'),
         (SOMEDAY, 'Someday'),
     )
-    timeframe = models.IntegerField(choices=TIMEFRAMES, default=NOW)
+    timeframe = models.IntegerField(choices=TIMEFRAMES)
 
     def save(self, *args, **kwargs):
         self.title = (self.body[:15]) if len(self.body) > 15 else self.body

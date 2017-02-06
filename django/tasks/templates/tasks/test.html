@@ -3,44 +3,56 @@
 
 {% block content %}
 
-<div class="container">
+
+<div class="container-fluid main-container">
   <div class="row">
-    <div class="col-md-12">
-      <form method="post" action="">
-        {% csrf_token %}
-        {{ formset.management_form  }}
-        <table class="table table-condensed">
-          <thead>
-            {% for field in formset.0.visible_fields %}
-            {% if field.name == 'DELETE' %}
-            <th>{% bootstrap_label 'Remove' label_class='text-align-center' %}</th>
-            {% else %}
-            <th>{% bootstrap_label field.label label_class='text-align-center' %}</th>
-            {% endif %}
-            {% endfor %}
-          </thead>
-          <tbody>
-            {% for form in formset %}
-            <tr>
-              {% for field in form.visible_fields %}
-              <td>{% bootstrap_field field show_label=False %}</td>
+    <div class="col-sm-9 col-md-10 col-sm-push-3 col-md-push-2">
+      <div class="panel panel-default">
+        <form method="post" action="">
+          {% csrf_token %}
+          {{ formset.management_form  }}
+          <table class="table table-condensed table-main">
+            <thead>
+              <th class="task-col">{% bootstrap_label 'Description' label_class='text-align-center' %}</th>
+              <th class="date-col">{% bootstrap_label 'Date' label_class='text-align-center' %}</th>
+              <th class="category-col">{% bootstrap_label 'Category' label_class='text-align-center' %}</th>
+              <th class="delete-col">{% bootstrap_label 'Remove' label_class='text-align-center' %}</th>
+            </thead>
+            <tbody>
+              {% for form in formset %}
+              <tr>
+                <td class="task-col">{% bootstrap_field form.body show_label=False %}</td>
+                <td class="date-col">{% bootstrap_field form.timeframe show_label=False %}</td>
+                <td class="category-col">{% bootstrap_field form.category show_label=False %}</td>
+                <td class="delete-col">{% bootstrap_field form.DELETE show_label=False %}</td>
+                {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+                {% endfor %}
+              </tr>
               {% endfor %}
-              {% for hidden in form.hidden_fields %}
-              {{ hidden }}
-              {% endfor %}
-            </tr>
-            {% endfor %}
-            <tr>
-              <td></td>
-              <td></td>
-              <td class='td-button-confirm'>
-                {% bootstrap_button button_type='submit' content='Update' button_class='btn-success' size='medium' value='submit' %}
-              </td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </form>
+              <tr>
+                <td></td>
+                <td></td>
+                <td class='td-button-confirm'>
+                  {% bootstrap_button button_type='submit' content='Update' button_class='btn-success' size='medium' value='submit' %}
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-2 col-sm-pull-9 col-md-pull-10">
+      <div class="panel panel-default">
+        <div class="panel-heading">Categories</div>
+      <ul class="list-group">
+      {% for category in categories %}
+        <li class="list-group-item"><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
+      {% endfor %}
+        <li class="list-group-item"><a href="{{ tasklist }}">All</a></li>
+      </ul>
+      </div>
     </div>
   </div>
 </div>
