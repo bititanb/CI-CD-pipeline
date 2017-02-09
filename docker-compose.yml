@@ -30,6 +30,7 @@ services:
         #    - nginx
         links:
             - postgres
+            - postfix
         restart: always
     nginx:
         image: nginx
@@ -43,3 +44,11 @@ services:
         links:
             - django
         restart: always
+    postfix:
+        image: catatnight/postfix
+        container_name: pf1
+        ports:
+            - "25:25"
+        environment:
+            - maildomain=mail.example.com
+            - smtp_user=user1:password1

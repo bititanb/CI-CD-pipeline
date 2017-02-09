@@ -7,3 +7,4 @@ ipdb
 pudb
 git+http://github.com/AndrewIngram/django-extra-views
 django-allauth
+django-allauth-bootstrap

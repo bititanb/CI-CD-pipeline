@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'bootstrapform',
+    'allauth_bootstrap',
     'tasks',
     'bootstrap3',
     'debug_toolbar',
@@ -63,7 +65,7 @@ ROOT_URLCONF = 'taskmngr.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'templates', 'allauth')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -148,3 +150,11 @@ AUTHENTICATION_BACKENDS = (
 )
 
 SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '/'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'postfix'
+EMAIL_HOST_USER = 'user1@mail.example.com'
+EMAIL_HOST_PASSWORD = 'password1'
+EMAIL_PORT = '25'

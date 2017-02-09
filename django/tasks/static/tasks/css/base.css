@@ -84,6 +84,19 @@ div.navbar-header > ul.nav {
     padding-right: 15px !important;
 }
 
+/* .base-container { */
+/*     max-width: 1250px; */
+/* } */
+
+/* .base-column > .container, .base-column > .container-fluid { */
+/*     padding-left:0; */
+/*     padding-right:0; */
+/* } */
+
+/* .base-column { */
+/*     text-align: center; */
+/* } */
+
 .main-container {
     max-width: 1250px;
 }
