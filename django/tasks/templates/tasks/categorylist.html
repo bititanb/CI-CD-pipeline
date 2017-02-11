@@ -29,7 +29,7 @@
               <td></td>
               {% endif %}
               {% for field in form.visible_fields %}
-              <td>{% bootstrap_field field show_label=False %}</td>
+              <td>{% bootstrap_field field show_label=False form_group_class='form-group-formset' %}</td>
               {% endfor %}
               {% for hidden in form.hidden_fields %}
               {{ hidden }}
