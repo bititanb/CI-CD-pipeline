@@ -4,13 +4,15 @@ from django.views import generic
 from django.utils import timezone
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin
 import extra_views
 
 from .models import *
 from .forms import *
+from .middleware import *
 
-class TaskList(extra_views.ModelFormSetView):
-    template_name = 'tasks/test.html'
+class TaskList(LoginRequiredMixin, extra_views.ModelFormSetView):
+    template_name = 'tasks/tasklist.html'
     model = Task
     form_class = TaskForm
     formset_class = TaskModelFormSet
@@ -19,15 +21,17 @@ class TaskList(extra_views.ModelFormSetView):
 
     def get_context_data(self, **kwargs):
         context = super(TaskList, self).get_context_data(**kwargs)
-        context['categories'] = Category.objects.all()
+        context['categories'] = Category.objects.filter(user=self.request.user)
         return context
 
     def get_queryset(self):
         if self.kwargs['slug'] == 'all':
-            return Task.objects.all().order_by('timeframe', 'category')
+            return Task.objects.filter(user=self.request.user).order_by('timeframe', 'category')
+        if self.kwargs['slug'] == 'uncategorized':
+            return Task.objects.filter(category=None, user=self.request.user).order_by('timeframe', 'category')
         else:
             category = get_object_or_404(Category, slug__iexact=self.kwargs['slug'])
-            return Task.objects.filter(category=category).order_by('timeframe', 'category')
+            return Task.objects.filter(category=category, user=self.request.user).order_by('timeframe', 'category')
 
     #def get_object(self):
     #    import pudb; pudb.set_trace()
@@ -41,7 +45,7 @@ class TaskList(extra_views.ModelFormSetView):
     #    category = get_object_or_404(Category, title__iexact=self.kwargs['slug'])
     #    return Task.objects.filter(category=category)
 
-class CategoryList(extra_views.ModelFormSetView):
+class CategoryList(LoginRequiredMixin, extra_views.ModelFormSetView):
     model = Category
     template_name = 'tasks/categorylist.html'
     form_class = CategoryForm
@@ -52,6 +56,9 @@ class CategoryList(extra_views.ModelFormSetView):
     # DEBUG
     def get_context_data(self, **kwargs):
         return super(CategoryList, self).get_context_data(**kwargs)
+
+    def get_queryset(self):
+        return Category.objects.filter(user=self.request.user)
 
 
 class CategoryCreate(generic.CreateView):

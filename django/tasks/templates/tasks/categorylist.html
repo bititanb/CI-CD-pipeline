@@ -11,14 +11,16 @@
         {{ formset.management_form  }}
         <table class="table table-condensed">
           <thead>
-            <th>{% bootstrap_label 'Tasks' label_class='text-align-center' %}</th>
-            {% for field in formset.0.visible_fields %}
-            {% if field.name == 'DELETE' %}
-            <th>{% bootstrap_label 'Remove' label_class='text-align-center' %}</th>
-            {% else %}
-            <th>{% bootstrap_label field.label label_class='text-align-center' %}</th>
-            {% endif %}
-            {% endfor %}
+            <tr>
+              <th></th>
+                {% for field in formset.0.visible_fields %}
+                {% if field.name == 'DELETE' %}
+                <th>{% bootstrap_label 'Remove' label_class='text-align-center' %}</th>
+                {% else %}
+                <th>{% bootstrap_label field.label label_class='text-align-center' %}</th>
+                {% endif %}
+                {% endfor %}
+              </tr>
           </thead>
           <tbody>
             {% for form in formset %}
@@ -39,6 +41,7 @@
             <tr>
               <td></td>
               <td class='td-button-confirm'>
+                {% bootstrap_button button_type='link' content='Go to tasks' size='medium' href=tasklist_all %}
                 {% bootstrap_button button_type='submit' content='Update' button_class='btn-success' size='medium' value='submit' %}
               </td>
               <td></td>

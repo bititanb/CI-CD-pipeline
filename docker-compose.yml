@@ -15,7 +15,7 @@ services:
         #command: sh -c "sleep 5 ; python manage.py collectstatic --no-input && python manage.py makemigrations && python manage.py migrate && gunicorn taskmngr.wsgi -b 0.0.0.0:8000"
 
         # DEBUGGING:
-        command: sh -c "sleep 5 ; python manage.py collectstatic --no-input && python manage.py makemigrations && python manage.py migrate && python manage.py loaddata tasks/fixtures/initial_data.json && python manage.py runserver 0.0.0.0:8000"
+        command: sh -c "sleep 5 ; python manage.py collectstatic --no-input && python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
         #command: sh -c "while true; do sleep 10; done"
         ports:
             - "38881:8000"

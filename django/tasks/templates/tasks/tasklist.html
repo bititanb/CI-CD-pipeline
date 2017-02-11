@@ -1,151 +1,67 @@
 {% extends 'base.html' %}
+{% load bootstrap3 %}
 
 {% block content %}
 
-{% comment %}
-<div class="container">
-    <div class="row-fluid">
-        <div class="hidden-xs col-xs-6 col-sm-3">
-            CATEGORIES:<p>
-            {% for category in categories %}
-            {{ category.title }}
-            {% endfor %}
-            <form action="/your-name/" method="post">
-                {% csrf_token %}
-                {{ form }}
-                <input type="submit" value="Submit" />
-            </form>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-            TASKS:<p>
-            {% for task in tasks %}
-            {{ task.title }}
-            {% endfor %}
-        </div>
-        <div class="col-xs-12 col-sm-3">
-            NEW TASK
-        </div>
-    </div>
-</div>
 
-
-        {% for task in object_list %}
-        <tr>
-            <td><a href="{% url 'taskupdate' pk=task.id %}">{{ task.id }}</a></td>
-            <td>{{ task.title }}</td>
-            <td>{{ task.category }}</td>
-            <td>{{ task.timeframe }}</td>
-            <td>{{ task.is_closed }}</td>
-        </tr>
-        {% endfor %}
-
-<div class="container">
-
-      <div class="row row-offcanvas row-offcanvas-right">
-
-        <div class="col-xs-12 col-sm-9">
-          <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-          </p>
-          <div class="jumbotron">
-            <h1>Hello, world!</h1>
-            <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
-          </div>
-          <div class="row">
-            <div class="col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-          <div class="list-group">
-            <a href="#" class="list-group-item active">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-          </div>
-        </div>
+<div class="container-fluid main-container">
+  <div class="row">
+    <div class="col-sm-9 col-md-10 col-sm-push-3 col-md-push-2">
+      <div class="panel panel-default">
+        <form method="post" action="">
+          {% csrf_token %}
+          {{ formset.management_form  }}
+          <table class="table table-condensed table-main">
+            <thead>
+              <tr>
+                <th class="task-col">{% bootstrap_label 'Description' label_class='text-align-center' %}</th>
+                <th class="date-col">{% bootstrap_label 'Date' label_class='text-align-center' %}</th>
+                <th class="category-col">{% bootstrap_label 'Category' label_class='text-align-center' %}</th>
+                <th class="delete-col">{% bootstrap_label 'Remove' label_class='text-align-center' %}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for form in formset %}
+              <tr>
+                <td class="task-col">{% bootstrap_field form.body show_label=False form_group_class='form-group-formset' %}</td>
+                <td class="date-col">{% bootstrap_field form.timeframe show_label=False form_group_class='form-group-formset' %}</td>
+                <td class="category-col">{% bootstrap_field form.category show_label=False form_group_class='form-group-formset' %}</td>
+                <td class="delete-col">{% bootstrap_field form.DELETE show_label=False form_group_class='form-group-formset' %}</td>
+                {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+                {% endfor %}
+              </tr>
+              {% endfor %}
+              <tr>
+                <td></td>
+                <td></td>
+                <td class='td-button-confirm'>
+                  {% bootstrap_button button_type='submit' content='Update' button_class='btn-success' size='medium' value='submit' %}
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
       </div>
-
-      <hr>
-
-      <footer>
-        <p>&copy; 2016 Company, Inc.</p>
-      </footer>
-
     </div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-md-4">
-            test
-        </div>
-        <div class="col-xs-12 col-md-4">
-            test2
-        </div>
-        <div class="col-xs-12 col-md-4">
-            test3
-        </div>
+    <div class="col-sm-3 col-md-2 col-sm-pull-9 col-md-pull-10">
+      <div class="panel panel-default">
+        <div class="panel-heading">Categories</div>
+        <ul class="list-group">
+          <li class="list-group-item"><a href="{{ tasklist_uncategorized }}">Uncategorized</a></li>
+          <li class="list-group-item"><a href="{{ tasklist_all }}">All</a></li>
+          {% for category in categories %}
+          <li class="list-group-item"><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        {% bootstrap_button button_type='link' extra_classes='margin-left-10' href=categorylist content='Edit' %}
     </div>
+  </div>
 </div>
-
-<div class='container'>
-    <div class='row'>
-    <table class='table table-bordered table-condensed'>
-        <tr>
-            <th>ID</th>
-            <th>title</th>
-            <th>category</th>
-            <th>timeframe</th>
-            <th>is_closed</th>
-        </tr>
-
-        {% for task in object_list %}
-        <tr>
-            <td><a href="{% url 'taskupdate' pk=task.id %}">{{ task.id }}</a></td>
-            <td>{{ task.title }}</td>
-            <td>{{ task.category }}</td>
-            <td>{{ task.timeframe }}</td>
-            <td>{{ task.is_closed }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-    </div>
-</div>
-{% endcomment %}
 
 {% endblock %}
+
+

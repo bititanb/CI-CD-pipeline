@@ -15,8 +15,14 @@
 {% endblock %}
 
 {% block bootstrap3_content %}
-{% url 'tasklist_all' as tasklist %}
+{% url 'tasklist_all' as tasklist_all %}
+{% url 'tasklist_uncategorized' as tasklist_uncategorized %}
 {% url 'categorylist' as categorylist %}
+{% url 'account_login' as login %}
+{% url 'account_signup' as signup %}
+{% url 'account_logout' as logout %}
+{% url 'account_email' as email %}
+{% url 'account_change_password' as change_password %}
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -25,12 +31,23 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ tasklist }}">taskmngr</a>
+            <a class="navbar-brand" href="{{ tasklist_all }}">taskmngr</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ tasklist }}">Tasks</a></li>
+          <ul class="nav navbar-nav navbar-left">
+                {% if user.is_authenticated %}
+                <li><a href="{{ tasklist_all }}">Tasks</a></li>
                 <li><a href="{{ categorylist }}">Categories</a></li>
+                {% endif %}
+          </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                <li><a href="{{ email }}">{{ user.email }}</a></li>
+                <li><a href="{{ logout }}">Log Out</a></li>
+                {% else %}
+                <li><a href="{{ login }}">Login</a></li>
+                <li><a href="{{ signup }}">Sign Up</a></li>
+                {% endif %}
                 <li class="hidden-sm hidden-md hidden-lg dropdown"> <a href="#" data-toggle="dropdown">Categories <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li class="dropdown-submenu"><a href="#"  data-toggle="dropdown">Action</a>
@@ -58,8 +75,6 @@
                         <li><a href="#" >Separated link</a></li>
                     </ul>
                 </li>
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
         </div>
     </div>
