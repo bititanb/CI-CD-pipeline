@@ -9,7 +9,7 @@
       <form method="post" action="">
         {% csrf_token %}
         {{ formset.management_form  }}
-        <table class="table table-condensed">
+        <table class="table table-categories table-condensed">
           <thead>
             <tr>
               <th></th>
@@ -41,8 +41,8 @@
             <tr>
               <td></td>
               <td class='td-button-confirm'>
-                {% bootstrap_button button_type='link' content='Go to tasks' size='medium' href=tasklist_all %}
-                {% bootstrap_button button_type='submit' content='Update' button_class='btn-success' size='medium' value='submit' %}
+                {% bootstrap_button button_type='link' button_class='btn-default' content='Go to tasks' size='medium' href=tasklist_all %}
+                {% bootstrap_button button_type='submit' content='Save' button_class='btn-success' size='medium' value='submit' %}
               </td>
               <td></td>
             </tr>

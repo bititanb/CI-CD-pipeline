@@ -45,8 +45,8 @@
 
                 <div class="text-center">
                   <div class="btn-toolbar margin-bottom-40">
-                    {% bootstrap_button size='small' button_type='submit' value='submit' content='Primary' button_class='btn-primary' name='action_primary' %}
-                    {% bootstrap_button size='small' button_type='submit' value='submit' content='Verify' button_class='btn-primary' name='action_send' %}
+                    {% bootstrap_button size='small' button_type='submit' value='submit' content='Primary' button_class='btn-info' name='action_primary' %}
+                    {% bootstrap_button size='small' button_type='submit' value='submit' content='Verify' button_class='btn-info' name='action_send' %}
                     {% bootstrap_button size='small' button_type='submit' value='submit' content='Remove' button_class='btn-danger' name='action_remove' %}
                   </div>
                 </div>
@@ -54,9 +54,9 @@
 
           <form class="login margin-bottom-20" method="POST" action="">
             {% csrf_token %}
-            {% bootstrap_form  add_email_form layout='inline' form_group_class="margin-bottom-20 form-group" %}
-            <div class="form-actions">
-              {% bootstrap_button size='small' button_type='submit' name='action_add' content='Add' button_class='btn-primary' value='submit' %}
+            {% bootstrap_form  add_email_form layout='inline' %}
+            <div class="form-actions margin-top-20">
+              {% bootstrap_button size='small' button_type='submit' name='action_add' content='Add' button_class='btn-info' value='submit' %}
             </div>
           </form>
         
@@ -69,7 +69,7 @@
         <p><strong>Warning:</strong> Currently you don't have an email address associated with your account.</p>
         {% endif %}
 
-        <div class="link-wrapper">
+        <div class="link-wrapper text-align-center">
           <a href="{{ change_password }}">Change password</a>
         </div>
       </div>

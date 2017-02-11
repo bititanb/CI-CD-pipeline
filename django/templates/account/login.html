@@ -25,16 +25,16 @@
               <div class="row margin-bottom-20">
                 <div class="col-xs-12">
                   <div class="btn-toolbar">
-                    {% bootstrap_button button_type='submit' content='Log In' button_class='btn-primary' value='submit' extra_classes='margin-right-15' %}
+                    {% bootstrap_button button_type='submit' content='Log In' button_class='btn-info' value='submit' extra_classes='margin-right-15' %}
                     {% url 'account_signup' as account_signup %}
                     {% bootstrap_button button_type='link' content='Sign Up' button_class='btn-success' href=account_signup %}
                   </div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-12 link-wrapper">
                   {% url 'account_reset_password' as account_reset_password %}
-                  <a href="{{ account_reset_password }}" >Forgot password?</a>
+                  <a href="{{ account_reset_password }}" style="font-weight: bold !important;" >Forgot password?</a>
                 </div>
               </div>
             </div>

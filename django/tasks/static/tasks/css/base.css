@@ -168,15 +168,47 @@ div.navbar-header > ul.nav {
     /* wider clickable area */
     display: block !important;
 }
-.link-wrapper > a {
-    display: inline-block;
-    padding: 15px 40px 25px 40px;
-}
-
-.link-wrapper {
-    text-align: center;
-}
 
 .panel {
     margin-bottom: 10px;
+    background-color: #f5f5f5;
+}
+
+.navbar, .navbar a {
+    background-color: #1c5d95 !important;
+    color: #f2f2f2 !important;
+}
+
+.navbar a:hover {
+    color: white !important;
+}
+
+.main-container li > a {
+    color: #1c5d95 !important;
+}
+
+.main-container li > a:hover {
+    color: #088dff !important;
+}
+
+body {
+    background: rgba(211, 218, 229, 0.33) !important;
+}
+
+.panel-heading {
+    background-color: rgb(47, 137, 196) !important;
+    color: white !important;
+}
+
+.table-categories td, .table-categories th {
+    vertical-align: middle !important;
+}
+
+.link-wrapper > a {
+    font-weight: bold;
+    color: #1c5d95 !important;
+}
+
+.link-wrapper > a:hover {
+    color: #088dff !important;
 }
