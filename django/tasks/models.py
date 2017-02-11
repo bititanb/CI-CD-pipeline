@@ -36,7 +36,7 @@ class Task(models.Model):
     slug = models.SlugField(editable=False)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=get_current_user, editable=False)
 
-    category = models.ForeignKey('Category', null=True, blank=True)
+    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
 
     NOW = 0
     LATER = 1
