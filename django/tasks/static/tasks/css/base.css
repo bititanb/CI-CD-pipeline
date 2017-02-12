@@ -95,14 +95,9 @@ textarea {
     text-align: center !important;
 }
 
-td, th {
-    //vertical-align: middle !important;
-    border: none !important;
-}
-
 .checkbox label {
     display: block;
-    padding-left: 30px;
+    padding-left: 30px !important;
 }
 
 div.navbar-header > ul.nav {
@@ -200,8 +195,8 @@ body {
     color: white !important;
 }
 
-.table-categories td, .table-categories th {
-    vertical-align: middle !important;
+.table-main td, .table-main th {
+    border: none !important;
 }
 
 .link-wrapper > a {
@@ -211,4 +206,24 @@ body {
 
 .link-wrapper > a:hover {
     color: #088dff !important;
+}
+
+div.form-group-formset.empty:not(.only) {
+    margin-top: 30px;
+}
+
+div.form-group-formset.empty.only {
+}
+
+input[id*='-DELETE'] {
+    margin-top: 6px !important;
+}
+
+div.form-group-formset.empty:not(.only) input[id*='-DELETE'] {
+    margin-top: 15px !important;
+}
+
+
+.tasks-by-category-link {
+    padding-top: 10px !important;
 }

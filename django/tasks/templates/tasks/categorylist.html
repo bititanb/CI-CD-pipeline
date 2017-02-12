@@ -9,7 +9,7 @@
       <form method="post" action="">
         {% csrf_token %}
         {{ formset.management_form  }}
-        <table class="table table-categories table-condensed">
+        <table class="table table-main table-categories table-condensed">
           <thead>
             <tr>
               <th></th>
@@ -24,19 +24,13 @@
           </thead>
           <tbody>
             {% for form in formset %}
-            <tr>
-              {% if form.instance.pk != None %}
-              <td class="cell-text-align-center">{% bootstrap_button button_type='link' content='Show' href=form.instance.get_absolute_url button_class='btn-success' size='small' %}</td>
+              {% if forloop.last and forloop.counter == 1 %}
+                {% include "./snippets/categorylist-table-last-row.html" with form_group_class='form-group-formset empty only' %}
+              {% elif forloop.last %}
+                {% include "./snippets/categorylist-table-last-row.html" with form_group_class='form-group-formset empty' %}
               {% else %}
-              <td></td>
+                {% include "./snippets/categorylist-table-last-row.html" with form_group_class='form-group-formset' %}
               {% endif %}
-              {% for field in form.visible_fields %}
-              <td>{% bootstrap_field field show_label=False form_group_class='form-group-formset' %}</td>
-              {% endfor %}
-              {% for hidden in form.hidden_fields %}
-              {{ hidden }}
-              {% endfor %}
-            </tr>
             {% endfor %}
             <tr>
               <td></td>

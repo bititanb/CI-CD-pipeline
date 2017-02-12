@@ -12,7 +12,7 @@ from .middleware import *
 #    return Category.objects.get(id=1)
 
 class Category(models.Model):
-    title = models.CharField(max_length=20, unique=True)
+    title = models.CharField(max_length=20)
     slug = models.SlugField(editable=False)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=get_current_user, editable=False)
     #url = models.URLField(editable=False)

@@ -22,21 +22,19 @@
             </thead>
             <tbody>
               {% for form in formset %}
-              <tr>
-                <td class="task-col">{% bootstrap_field form.body show_label=False form_group_class='form-group-formset' %}</td>
-                <td class="date-col">{% bootstrap_field form.timeframe show_label=False form_group_class='form-group-formset' %}</td>
-                <td class="category-col">{% bootstrap_field form.category show_label=False form_group_class='form-group-formset' %}</td>
-                <td class="delete-col">{% bootstrap_field form.DELETE show_label=False form_group_class='form-group-formset' %}</td>
-                {% for hidden in form.hidden_fields %}
-                {{ hidden }}
-                {% endfor %}
-              </tr>
+              {% if forloop.last and forloop.counter == 1 %}
+                {% include "./snippets/tasklist-table-last-row.html" with form_group_class='form-group-formset empty only' %}
+              {% elif forloop.last %}
+                {% include "./snippets/tasklist-table-last-row.html" with form_group_class='form-group-formset empty' %}
+              {% else %}
+                {% include "./snippets/tasklist-table-last-row.html" with form_group_class='form-group-formset' %}
+              {% endif %}
               {% endfor %}
               <tr>
                 <td></td>
                 <td></td>
                 <td class='td-button-confirm'>
-                  {% bootstrap_button button_type='submit' content='Update' button_class='btn-success' size='medium' value='submit' %}
+                  {% bootstrap_button button_type='submit' content='Save' button_class='btn-success' size='medium' value='submit' %}
                 </td>
                 <td></td>
               </tr>

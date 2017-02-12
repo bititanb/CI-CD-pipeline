@@ -37,6 +37,9 @@ class CategoryForm(forms.ModelForm):
         labels = {
             'title': 'Category',
         }
+        widgets = {
+            'title': forms.TextInput(attrs={'placeholder': ''}),
+        }
 
 
 class DeletionFieldLabelEmptyMixin(object):

@@ -30,7 +30,7 @@ class TaskList(LoginRequiredMixin, extra_views.ModelFormSetView):
         if self.kwargs['slug'] == 'uncategorized':
             return Task.objects.filter(category=None, user=self.request.user).order_by('timeframe', 'category')
         else:
-            category = get_object_or_404(Category, slug__iexact=self.kwargs['slug'])
+            category = get_object_or_404(Category, pk__iexact=self.kwargs['pk'])
             return Task.objects.filter(category=category, user=self.request.user).order_by('timeframe', 'category')
 
     #def get_object(self):
