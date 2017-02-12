@@ -1,0 +1,10 @@
+{% load bootstrap3 %}
+<tr>
+    <td class="task-col">{% bootstrap_field form.body show_label=False form_group_class=form_group_class %}</td>
+    <td class="date-col">{% bootstrap_field form.timeframe show_label=False form_group_class=form_group_class %}</td>
+    <td class="category-col">{% bootstrap_field form.category show_label=False form_group_class=form_group_class %}</td>
+    <td class="delete-col">{% bootstrap_field form.DELETE show_label=False form_group_class=form_group_class %}</td>
+    {% for hidden in form.hidden_fields %}
+    {{ hidden }}
+    {% endfor %}
+</tr>

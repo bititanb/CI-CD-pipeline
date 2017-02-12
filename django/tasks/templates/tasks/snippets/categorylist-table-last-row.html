@@ -1,0 +1,15 @@
+{% load bootstrap3 %}
+
+<tr>
+    {% if form.instance.pk != None %}
+    <td class="cell-text-align-center tasks-by-category-link">{% bootstrap_button button_type='link' content='Show' href=form.instance.get_absolute_url button_class='btn-success' size='small' %}</td>
+    {% else %}
+    <td></td>
+    {% endif %}
+    {% for field in form.visible_fields %}
+    <td>{% bootstrap_field field show_label=False form_group_class=form_group_class %}</td>
+    {% endfor %}
+    {% for hidden in form.hidden_fields %}
+    {{ hidden }}
+    {% endfor %}
+</tr>
