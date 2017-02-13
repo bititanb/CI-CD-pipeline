@@ -3,7 +3,6 @@
 
 {% block content %}
 
-
 <div class="container-fluid main-container">
   <div class="row">
     <div class="col-sm-9 col-md-10 col-sm-push-3 col-md-push-2">
@@ -23,11 +22,11 @@
             <tbody>
               {% for form in formset %}
               {% if forloop.last and forloop.counter == 1 %}
-                {% include "./snippets/tasklist-table-last-row.html" with form_group_class='form-group-formset empty only' %}
+              {% include "./snippets/tasklist-table-last-row.html" with form_group_class='form-group-formset empty only' %}
               {% elif forloop.last %}
-                {% include "./snippets/tasklist-table-last-row.html" with form_group_class='form-group-formset empty' %}
+              {% include "./snippets/tasklist-table-last-row.html" with form_group_class='form-group-formset empty' %}
               {% else %}
-                {% include "./snippets/tasklist-table-last-row.html" with form_group_class='form-group-formset' %}
+              {% include "./snippets/tasklist-table-last-row.html" with form_group_class='form-group-formset' %}
               {% endif %}
               {% endfor %}
               <tr>
@@ -56,6 +55,7 @@
       </div>
       <div>
         {% bootstrap_button button_type='link' extra_classes='margin-left-10' href=categorylist content='Edit' button_class='btn-info' %}
+      </div>
     </div>
   </div>
 </div>

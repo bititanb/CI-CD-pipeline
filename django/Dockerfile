@@ -7,4 +7,3 @@ RUN mkdir $django_dir
 WORKDIR $django_dir
 COPY requirements.txt .
 RUN pip install -r requirements.txt
-#COPY . .

@@ -11,29 +11,22 @@ services:
     django:
         build: ./django
         container_name: django
+        ports:
+            - "38881:8000"
+        volumes:
+            - ./django:/django:z
+            - ./static:/static:z
+        depends_on:
+            - postgres
+            - nginx
+            - postfix
+        restart: always
         # WORKAROUND without sleep() django can't connect to database in time
         #command: sh -c "sleep 5 ; python manage.py collectstatic --no-input && python manage.py makemigrations && python manage.py migrate && gunicorn taskmngr.wsgi -b 0.0.0.0:8000"
 
         # DEBUGGING:
         command: sh -c "sleep 5 ; python manage.py collectstatic --no-input && python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
         #command: sh -c "while true; do sleep 10; done"
-        ports:
-            - "38881:8000"
-
-        volumes:
-            - ./django:/django:z
-            - ./static:/static:z
-        #expose:
-        #    - "8000"
-        depends_on:
-            - postgres
-            - nginx
-            - postfix
-        # links:
-        #     - postgres
-        #     - postfix
-        #     - nginx
-        restart: always
     nginx:
         image: nginx
         container_name: nginx
@@ -52,3 +45,4 @@ services:
         environment:
             - maildomain=mail.example.com
             - smtp_user=user1:password1
+        restart: always
