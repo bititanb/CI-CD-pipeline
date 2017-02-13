@@ -128,4 +128,4 @@ tags
 
 # End of https://www.gitignore.io/api/linux,python,vim,django
 
-!.gitignore
+!/.gitignore
