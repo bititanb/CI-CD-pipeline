@@ -1,10 +1,11 @@
-Django
-psycopg2
-gunicorn
-django-bootstrap3
+Django>=1.10,<1.11
+psycopg2>=2.7,<2.8
+gunicorn>=19.7,<19.8
+django-bootstrap3>=8.2,<8.3
 git+http://github.com/AndrewIngram/django-extra-views
-django-allauth
+django-allauth>=0.25,<0.26
 
-django-debug-toolbar
+django-allauth-bootstrap>=0.2,<0.3
+django-debug-toolbar>=1.7,<1.8
 ipdb
 pudb

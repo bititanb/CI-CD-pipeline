@@ -1,4 +1,89 @@
 apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: static-files-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/pv/static-files"
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: postgres-data-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/pv/postgres-data"
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: static-files-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-data-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: nginx-conf
+data:
+    django1.conf: |
+        upstream django {
+            ip_hash;
+            server localhost:8001;
+        }
+
+        server {
+            listen 8000;
+            server_name localhost;
+
+            location / {
+                proxy_pass http://django/;
+            }
+
+            location /static {
+                autoindex on;
+                alias /static;
+            }
+        }
+
+---
+
+apiVersion: v1
 kind: Service
 metadata:
     labels:
@@ -8,62 +93,16 @@ spec:
     ports:
         - name: nginx
           port: 8000
-          targetPort: 38900
         - name: django
           port: 8001
-          targetPort: 38901
         - name: postgres
           port: 5432
-          targetPort: 38902
     selector:
         app: taskmngr
     type: NodePort
 
 ---
-apiVersion: v1
-kind: ConfigMap
-metadata:
-    name: nginx-conf
-data:
-    django1.conf: |
-        upstream django {
-        ip_hash;
-        server django:8000;
-        }
 
-        server {
-        listen 8000;
-        server_name localhost;
-
-        location / {
-                proxy_pass http://django/;
-            }
-
-        location /static {
-            autoindex on;
-            alias /static;
-        }
-        }
-
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: static-files
-spec:
-  accessModes:
-    - ReadWriteMany
-
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: postgres-data
-spec:
-  accessModes:
-    - ReadWriteMany
-
----
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -81,7 +120,7 @@ spec:
                 - image: nginx
                   name: nginx
                   ports:
-                      - containerPort: 38900
+                      - containerPort: 8000
                   volumeMounts:
                       - name: nginx-conf
                         mountPath: /etc/nginx/conf.d/
@@ -90,16 +129,17 @@ spec:
                 - image: bititanb/taskmngr
                   name: django
                   command: ["/bin/sh"]
+                  #args: ["-c", "sleep 5 ; python manage.py collectstatic --no-input && python manage.py makemigrations && python manage.py migrate && gunicorn taskmngr.wsgi -b 0.0.0.0:8001"]
                   args: ["-c", "while true; do sleep 5; done"]
                   ports:
-                      - containerPort: 38901
+                      - containerPort: 8001
                   volumeMounts:
                       - name: static-files
                         mountPath: /django/static
                 - image: postgres
                   name: postgres
                   ports:
-                      - containerPort: 38902
+                      - containerPort: 5432
                   volumeMounts:
                       - name: postgres-data
                         mountPath: /var/lib/postgresql/data
@@ -112,9 +152,11 @@ spec:
                             path: django1.conf
                 - name: static-files
                   persistentVolumeClaim:
-                      claimName: static-files
+                      claimName: static-files-pvc
+                - name: postgres-data
+                  persistentVolumeClaim:
+                      claimName: postgres-data-pvc
     selector:
         matchLabels:
             app: taskmngr
-
 
