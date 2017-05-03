@@ -1,0 +1,120 @@
+apiVersion: v1
+kind: Service
+metadata:
+    labels:
+        app: taskmngr
+    name: taskmngr
+spec:
+    ports:
+        - name: nginx
+          port: 8000
+          targetPort: 38900
+        - name: django
+          port: 8001
+          targetPort: 38901
+        - name: postgres
+          port: 5432
+          targetPort: 38902
+    selector:
+        app: taskmngr
+    type: NodePort
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: nginx-conf
+data:
+    django1.conf: |
+        upstream django {
+        ip_hash;
+        server django:8000;
+        }
+
+        server {
+        listen 8000;
+        server_name localhost;
+
+        location / {
+                proxy_pass http://django/;
+            }
+
+        location /static {
+            autoindex on;
+            alias /static;
+        }
+        }
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: static-files
+spec:
+  accessModes:
+    - ReadWriteMany
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-data
+spec:
+  accessModes:
+    - ReadWriteMany
+
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+    labels:
+        app: taskmngr
+    name: taskmngr
+spec:
+    replicas: 1
+    template:
+        metadata:
+            labels:
+                app: taskmngr
+        spec:
+            containers:
+                - image: nginx
+                  name: nginx
+                  ports:
+                      - containerPort: 38900
+                  volumeMounts:
+                      - name: nginx-conf
+                        mountPath: /etc/nginx/conf.d/
+                      - name: static-files
+                        mountPath: /static
+                - image: bititanb/taskmngr
+                  name: django
+                  command: ["/bin/sh"]
+                  args: ["-c", "while true; do sleep 5; done"]
+                  ports:
+                      - containerPort: 38901
+                  volumeMounts:
+                      - name: static-files
+                        mountPath: /django/static
+                - image: postgres
+                  name: postgres
+                  ports:
+                      - containerPort: 38902
+                  volumeMounts:
+                      - name: postgres-data
+                        mountPath: /var/lib/postgresql/data
+            volumes:
+                - name: nginx-conf
+                  configMap:
+                      name: nginx-conf
+                      items:
+                          - key: django1.conf
+                            path: django1.conf
+                - name: static-files
+                  persistentVolumeClaim:
+                      claimName: static-files
+    selector:
+        matchLabels:
+            app: taskmngr
+
+

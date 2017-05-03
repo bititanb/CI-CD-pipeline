@@ -5,5 +5,5 @@ ENV django_dir /django
 
 RUN mkdir $django_dir
 WORKDIR $django_dir
-COPY requirements.txt .
+COPY ./* ./
 RUN pip install -r requirements.txt
