@@ -79,22 +79,29 @@ data:
     django1.conf: |
         upstream django {
             ip_hash;
-            server localhost:8001;
+            server 127.0.0.1:8001;
         }
 
         server {
             listen 8000;
-            server_name localhost;
+            server_name taskmngr1;
 
             location / {
                 proxy_pass http://django/;
+                include /etc/nginx/proxy_params;
             }
 
             location /static {
                 autoindex on;
                 alias /static;
+                include /etc/nginx/proxy_params;
             }
         }
+    proxy_params: |
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
 
 ---
 
@@ -132,25 +139,13 @@ spec:
                 app: taskmngr
         spec:
             containers:
-                - image: nginx
-                  name: nginx
+                - image: catatnight/postfix
+                  name: postfix
                   ports:
-                      - containerPort: 8000
-                  volumeMounts:
-                      - name: nginx-conf
-                        mountPath: /etc/nginx/conf.d/
-                      - name: static-files
-                        mountPath: /static
-                - image: bititanb/taskmngr
-                  name: django
-                  command: ["/bin/sh"]
-                  args: ["-c", "sleep 5 ; python manage.py collectstatic --no-input && python manage.py makemigrations && python manage.py migrate && gunicorn taskmngr.wsgi -b 0.0.0.0:8001"]
-                  #args: ["-c", "while true; do sleep 5; done"]
-                  ports:
-                      - containerPort: 8001
-                  volumeMounts:
-                      - name: static-files
-                        mountPath: /django/static
+                      - containerPort: 25
+                  resources:
+                      limits:
+                          cpu: 100m
                 - image: postgres
                   name: postgres
                   ports:
@@ -158,13 +153,51 @@ spec:
                   volumeMounts:
                       - name: postgres-data
                         mountPath: /var/lib/postgresql/data
+                  resources:
+                      limits:
+                          cpu: 100m
+                - image: nginx
+                  name: nginx
+                  ports:
+                      - containerPort: 8000
+                  volumeMounts:
+                      - name: nginx-django-conf
+                        mountPath: /etc/nginx/conf.d/django1.conf
+                        subPath: django1.conf
+                      - name: nginx-proxy-conf
+                        mountPath: /etc/nginx/proxy_params
+                        subPath: proxy_params
+                      - name: static-files
+                        mountPath: /static
+                  resources:
+                      limits:
+                          cpu: 100m
+                - image: bititanb/taskmngr
+                  name: django
+                  command: ["/bin/sh"]
+                  args: ["-c", "python manage.py collectstatic --no-input && python manage.py makemigrations && chown -R root:root /static && chmod -R 755 /static && python manage.py migrate && gunicorn taskmngr.wsgi -b 0.0.0.0:8001"]
+                  #args: ["-c", "while true; do sleep 5; done"]
+                  ports:
+                      - containerPort: 8001
+                  volumeMounts:
+                      - name: static-files
+                        mountPath: /static
+                  resources:
+                      limits:
+                          cpu: 150m
             volumes:
-                - name: nginx-conf
+                - name: nginx-django-conf
                   configMap:
                       name: nginx-conf
                       items:
                           - key: django1.conf
                             path: django1.conf
+                - name: nginx-proxy-conf
+                  configMap:
+                      name: nginx-conf
+                      items:
+                          - key: proxy_params
+                            path: proxy_params
                 - name: static-files
                   persistentVolumeClaim:
                       claimName: static-files-pvc

@@ -22,6 +22,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '5(sf+g@kmuxmtsf!x65d(hs3(467)+!7h-f6es&sq&%oj%ws4n'
 
+#CSRF_TRUSTED_ORIGINS = ['taskmngr1']
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -89,7 +91,7 @@ DATABASES = {
                 'ENGINE': 'django.db.backends.postgresql',
                 'NAME': 'postgres',
                 'USER': 'postgres',
-                'HOST': 'localhost',
+                'HOST': '127.0.0.1',
                 'PORT': 5432,
     }
 }
@@ -147,7 +149,7 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'postfix'
+EMAIL_HOST = '127.0.0.1'
 EMAIL_HOST_USER = 'user1@mail.example.com'
 EMAIL_HOST_PASSWORD = 'password1'
 EMAIL_PORT = '25'
@@ -157,3 +159,6 @@ ACCOUNT_EMAIL_VERIFICATION = 'optional'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_LOGOUT_ON_GET = True
+
+USE_X_FORWARDED_HOST = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
