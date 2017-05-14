@@ -44,10 +44,10 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth_bootstrap',
+    # 'allauth_bootstrap',
     'tasks',
     'bootstrap3',
-    'debug_toolbar',
+    # 'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +59,7 @@ MIDDLEWARE = [
     'tasks.middleware.CurrentUserMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'taskmngr.urls'
@@ -150,8 +150,8 @@ LOGIN_REDIRECT_URL = '/'
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = '127.0.0.1'
-EMAIL_HOST_USER = 'user1@mail.example.com'
-EMAIL_HOST_PASSWORD = 'password1'
+EMAIL_HOST_USER = 'postfix-user@mail.example.com'
+EMAIL_HOST_PASSWORD = '1'
 EMAIL_PORT = '25'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'

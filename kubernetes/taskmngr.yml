@@ -115,12 +115,16 @@ spec:
     ports:
         - name: postfix
           port: 25
+          nodePort: 30025
         - name: nginx
           port: 8000
+          nodePort: 30080
         - name: django
           port: 8001
+          nodePort: 30081
         - name: postgres
           port: 5432
+          nodePort: 30032
     selector:
         app: taskmngr
     type: NodePort
@@ -152,7 +156,7 @@ spec:
                       - name: maildomain
                         value: mail.example.com
                       - name: smtp_user
-                        value: user1:password1
+                        value: postfix-user:1
                 - image: postgres
                   name: postgres
                   ports:
