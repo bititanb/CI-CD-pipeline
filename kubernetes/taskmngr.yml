@@ -113,6 +113,8 @@ metadata:
     name: taskmngr
 spec:
     ports:
+        - name: postfix
+          port: 25
         - name: nginx
           port: 8000
         - name: django
@@ -146,6 +148,11 @@ spec:
                   resources:
                       limits:
                           cpu: 100m
+                  env:
+                      - name: maildomain
+                        value: mail.example.com
+                      - name: smtp_user
+                        value: user1:password1
                 - image: postgres
                   name: postgres
                   ports:
