@@ -2,6 +2,8 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: taskmngr-nginx-ingress
+	annotations:
+    nginx.org/ssl-services: "ssl-svc"
 spec:
   rules:
       - http:
