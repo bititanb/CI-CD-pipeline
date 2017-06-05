@@ -2,16 +2,12 @@
 
 node {
   stage('Checkout'){
-    steps {
-      checkout scm
-    }
+    checkout scm
   }
   stage('Build') {
-    steps {
-      dir 'django'
-      app = docker.build('taskmngr1:5000/taskmngr')
-      app.push()
-    }
+    dir 'django'
+    app = docker.build('taskmngr1:5000/taskmngr')
+    app.push()
   }
   // stage('Test') {
   //   steps {
@@ -19,8 +15,6 @@ node {
   //   }
   // }
   stage('Deploy') {
-    steps {
-      echo 'Deploying....'
-    }
+    echo 'Deploying....'
   }
 }
