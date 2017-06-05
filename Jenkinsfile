@@ -6,9 +6,10 @@ node {
   }
   stage('Build') {
     docker.withRegistry('https://taskmngr1:5000/') {
-      dir 'django' {
-        docker.build('taskmngr').push('latest')
-      }
+      pwd
+      // dir 'django' {
+      //   docker.build('taskmngr').push('latest')
+      // }
     }
     // dir 'django'
     // def app = docker.build('taskmngr1:5000/taskmngr')
