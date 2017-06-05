@@ -7,14 +7,15 @@ pipeline {
   // }
 
   stages {
-    stage('Test') {
-      steps {
-        sh 'python django/manage.py test'
-      }
-    }
     stage('Build') {
       steps {
-        echo 'Building..'
+        cd "django"
+        sh "docker build ."
+      }
+    }
+    stage('Test') {
+      steps {
+        // sh 'python django/manage.py test'
       }
     }
     stage('Deploy') {
