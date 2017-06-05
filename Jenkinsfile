@@ -2,11 +2,14 @@
 
 node {
   stage('Checkout'){
-    checkout scm
+    git(url: 'https://bitbucket.org/bititanb/taskmngr')
   }
   stage('Build') {
     docker.withRegistry('https://taskmngr1:5000/') {
-      echo "$PWD"
+      dir 'django' {
+        echo "$PWD"
+        pwd
+      }
       // dir 'django' {
       //   docker.build('taskmngr').push('latest')
       // }
