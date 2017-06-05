@@ -6,7 +6,7 @@ node {
   }
   stage('Build') {
     docker.withRegistry('https://taskmngr1:5000/') {
-      pwd
+      echo '$PWD'
       // dir 'django' {
       //   docker.build('taskmngr').push('latest')
       // }
