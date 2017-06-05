@@ -13,11 +13,11 @@ pipeline {
         sh "docker build ."
       }
     }
-    stage('Test') {
-      steps {
+    // stage('Test') {
+    //   steps {
         // sh 'python django/manage.py test'
-      }
-    }
+    //   }
+    // }
     stage('Deploy') {
       steps {
         echo 'Deploying....'
