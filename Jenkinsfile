@@ -5,9 +5,13 @@ node {
     checkout scm
   }
   stage('Build') {
-    dir 'django'
-    def app = docker.build('taskmngr1:5000/taskmngr')
-    app.push()
+    docker.withRegistry('https://taskmngr1:5000/', 'docker-login') {
+      dir 'django'
+      docker.build('taskmngr').push('latest')
+    }
+    // dir 'django'
+    // def app = docker.build('taskmngr1:5000/taskmngr')
+    // app.push()
   }
   stage('Deploy') {
     echo 'Deploying....'
