@@ -8,13 +8,14 @@ pipeline {
 
   stages {
     stage('Checkout'){
-      checkout scm
+      steps {
+        checkout scm
+      }
     }
     stage('Build') {
       steps {
         dir 'django'
-        app = docker.build('taskmngr1:5000/taskmngr')
-        app.push()
+        docker.build('taskmngr1:5000/taskmngr').push()
       }
     }
     // stage('Test') {
