@@ -2,13 +2,14 @@
 
 node {
   stage('Checkout'){
-    git(url: 'https://bitbucket.org/bititanb/taskmngr')
+    ansiblePlaybook(playbook="taskmngr-kubernetes")
   }
   stage('Build') {
-    gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
-    // short SHA, possibly better for chat notifications, etc.
-    shortCommit = gitCommit.take(6)
-    echo(shortCommit)
+    echo 'building'
+    // gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
+    // // short SHA, possibly better for chat notifications, etc.
+    // shortCommit = gitCommit.take(6)
+    // echo(shortCommit)
     // docker.withRegistry('https://taskmngr1:5000/') {
       // dir('django') {
       //   docker.build('taskmngr').push()
