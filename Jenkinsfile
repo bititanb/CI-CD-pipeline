@@ -2,7 +2,12 @@
 
 node {
   stage('Checkout'){
-    ansiblePlaybook(playbook="taskmngr-kubernetes")
+    ansiblePlaybook("taskmng.yaml") {
+      tags('taskmngr-kubernetes')
+      extraVars {
+        extraVar("app_test", "true", false)
+      }
+    }
   }
   stage('Build') {
     echo 'building'
