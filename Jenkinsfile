@@ -8,8 +8,7 @@ node {
         extraVars: [
           app_test: "true",
         ]
-      )
-    }
+    )
   }
   stage('Build') {
     echo 'building'
