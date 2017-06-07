@@ -4,7 +4,7 @@ node {
   stage('Checkout'){
     ansiblePlaybook(
         playbook: "/etc/ansible/taskmngr.yaml",
-        tags: 'taskmngr-kubernetes'
+        tags: 'taskmngr-kubernetes',
         extraVars: [
           app_test: "true",
         ]
