@@ -6,7 +6,11 @@ node {
         playbook: "/etc/ansible/taskmngr.yaml",
         tags: 'taskmngr-kubernetes',
         extraVars: [
+          app_checkout: "true",
+          app_build: "true",
+          app_deploy_testing: "true",
           app_test: "true",
+          app_deploy_prod: "true",
         ]
     )
   }
