@@ -1,32 +1,49 @@
 #!/usr/bin/env groovy
 
-node {
+node('master') {
   stage('Checkout'){
     ansiblePlaybook(
         playbook: "/etc/ansible/taskmngr.yaml",
         tags: 'taskmngr-kubernetes',
         extraVars: [
           app_checkout: "true",
-          app_build: "true",
-          app_deploy_testing: "true",
-          app_test: "true",
-          app_deploy_prod: "true",
         ]
     )
   }
-  stage('Build') {
-    echo 'building'
-    // gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
-    // // short SHA, possibly better for chat notifications, etc.
-    // shortCommit = gitCommit.take(6)
-    // echo(shortCommit)
-    // docker.withRegistry('https://taskmngr1:5000/') {
-      // dir('django') {
-      //   docker.build('taskmngr').push()
-      // }
-    // }
+  stage('Build'){
+    ansiblePlaybook(
+        playbook: "/etc/ansible/taskmngr.yaml",
+        tags: 'taskmngr-kubernetes',
+        extraVars: [
+          app_build: "true",
+        ]
+    )
   }
-  stage('Deploy') {
-    echo 'Deploying....'
+  stage('Deploy testing'){
+    ansiblePlaybook(
+        playbook: "/etc/ansible/taskmngr.yaml",
+        tags: 'taskmngr-kubernetes',
+        extraVars: [
+          app_deploy_testing: "true",
+        ]
+    )
+  }
+  stage('Tests'){
+    ansiblePlaybook(
+        playbook: "/etc/ansible/taskmngr.yaml",
+        tags: 'taskmngr-kubernetes',
+        extraVars: [
+          app_test: "true",
+        ]
+    )
+  }
+  stage('Deploy prod'){
+    ansiblePlaybook(
+        playbook: "/etc/ansible/taskmngr.yaml",
+        tags: 'taskmngr-kubernetes',
+        extraVars: [
+          app_deploy_prod: "true",
+        ]
+    )
   }
 }
