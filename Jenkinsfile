@@ -2,13 +2,22 @@
 
 node('master') {
   stage('Checkout'){
-    ansiblePlaybook(
-        playbook: "/etc/ansible/taskmngr.yaml",
-        tags: 'taskmngr-kubernetes',
-        extraVars: [
-          app_checkout: "true",
-        ]
-    )
+      checkout([
+          $class: 'GitSCM',
+          branches: [[name: '*/master']],
+          doGenerateSubmoduleConfigurations: false,
+          extensions: [[$class: 'RelativeTargetDirectory',
+          relativeTargetDir: '/tmp/taskmngr-django']],
+          submoduleCfg: [],
+          userRemoteConfigs: [[url: 'https://bitbucket.org/bititanb/taskmngr']]
+      ])
+    // ansiblePlaybook(
+    //     playbook: "/etc/ansible/taskmngr.yaml",
+    //     tags: 'taskmngr-kubernetes',
+    //     extraVars: [
+    //       app_checkout: "true",
+    //     ]
+    // )
   }
   stage('Build'){
     ansiblePlaybook(
