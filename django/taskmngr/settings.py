@@ -44,9 +44,9 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    # 'allauth_bootstrap',
     'tasks',
     'bootstrap3',
+    # 'allauth_bootstrap',
     # 'debug_toolbar',
 ]
 
