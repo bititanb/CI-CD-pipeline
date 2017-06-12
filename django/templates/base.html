@@ -41,6 +41,7 @@
                 {% endif %}
           </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li><span class="navbar-text">{{ app_version }}.{{ app_revision_short }}</span></li>
                 {% if user.is_authenticated %}
                 <li><a href="{{ email }}">{{ user.email }}</a></li>
                 <li><a href="{{ logout }}">Log Out</a></li>
