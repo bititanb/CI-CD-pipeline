@@ -67,8 +67,8 @@ Vagrant.configure(2) do |config|
 
   config.vm.define "taskmngr1" do |taskmngr1|
     taskmngr1.vm.provider "virtualbox" do |vb|
-      vb.memory = "3500"
-      vb.cpus = 8
+      vb.memory = "3800"
+      vb.cpus = 2
     end
     taskmngr1.vm.network "private_network", ip: "192.168.59.2"
     taskmngr1.vm.provision "shell", path: "taskmngr1.sh"
@@ -78,7 +78,7 @@ Vagrant.configure(2) do |config|
   config.vm.define "taskmngr2" do |taskmngr2|
     taskmngr2.vm.provider "virtualbox" do |vb|
       vb.memory = "750"
-      vb.cpus = 8
+      vb.cpus = 2
     end
     taskmngr2.vm.network "private_network", ip: "192.168.59.3"
     taskmngr2.vm.provision "shell", path: "taskmngr-common.sh"
