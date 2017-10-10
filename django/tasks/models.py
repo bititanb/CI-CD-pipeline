@@ -34,8 +34,7 @@ class Task(models.Model):
     NOW = 0
     LATER = 1
     SOMEDAY = 2
-    TIMEFRAMES = (
-        (NOW, 'Now'),
+    TIMEFRAMES = ( (NOW, 'Now'),
         (LATER, 'Later'),
         (SOMEDAY, 'Someday'),
     )

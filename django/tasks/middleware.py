@@ -9,3 +9,5 @@ class CurrentUserMiddleware(MiddlewareMixin):
 
 def get_current_user():
     return _current_user.value
+
+
