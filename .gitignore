@@ -127,5 +127,19 @@ Session.vim
 tags
 
 # End of https://www.gitignore.io/api/linux,python,vim,django
-*.qcow2
+
+# Created by https://www.gitignore.io/api/vagrant,packer
+
+### Packer ###
+# Cache objects
 packer_cache/
+
+# For built boxes
+*.box
+
+### Vagrant ###
+.vagrant/
+
+# End of https://www.gitignore.io/api/vagrant,packer
+
+*.qcow2

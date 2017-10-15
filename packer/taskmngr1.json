@@ -3,13 +3,13 @@
     {
       "accelerator": "kvm",
       "boot_command": [
-        "<up><wait><tab><wait> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/c7-kvm-ks.cfg<enter><wait>"
+        "<up><wait><tab><wait> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/taskmngr1.cfg<enter><wait>"
       ],
       "boot_wait": "40s",
       "disk_interface": "virtio",
-      "disk_size": 100000,
+      "disk_size": 8000,
       "format": "qcow2",
-      "headless": false,
+      "headless": true,
       "http_directory": "docroot",
       "http_port_max": 10089,
       "http_port_min": 10082,
@@ -17,15 +17,15 @@
       "iso_checksum_type": "md5",
       "iso_url": "http://mirror.nsc.liu.se/centos-store/7.2.1511/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso",
       "net_device": "virtio-net",
-      "output_directory": "centos7-base-img",
+      "output_directory": "taskmngr1-images",
       "qemuargs": [
         [
           "-m",
-          "2048M"
+          "3800M"
         ],
         [
           "-smp",
-          "cpus=1,maxcpus=16,cores=4"
+          "cpus=1,maxcpus=16,cores=2"
         ]
       ],
       "shutdown_command": "shutdown -P now",
@@ -36,30 +36,18 @@
       "ssh_username": "root",
       "ssh_wait_timeout": "1200s",
       "type": "qemu",
-      "vm_name": "taskmngr1"
+      "vm_name": "taskmngr1.qcow2"
     }
   ],
   "post-processors": [],
   "provisioners": [
     {
-      "command": "tar zcf stardata-install.tar.gz stardata-install/",
-      "type": "shell-local"
+      "type": "shell",
+      "script": "../scripts/taskmngr-common.sh"
     },
     {
-      "destination": "/root/stardata-install.tar.gz",
-      "source": "stardata-install.tar.gz",
-      "type": "file"
-    },
-    {
-      "inline": [
-        "cd /root/",
-        "tar zxf stardata-install.tar.gz",
-        "cd stardata-install/",
-        "./install.sh",
-        "yum clean all"
-      ],
-      "pause_before": "5s",
-      "type": "shell"
+      "type": "shell",
+      "script": "../scripts/taskmngr1.sh"
     }
   ]
 }

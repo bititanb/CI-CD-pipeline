@@ -77,8 +77,9 @@ Vagrant.configure(2) do |config|
       vb.cpus = 2
     end
     taskmngr1.vm.network "private_network", ip: "192.168.59.2"
-    taskmngr1.vm.provision "shell", path: "taskmngr1.sh"
-    taskmngr1.vm.provision "shell", path: "taskmngr-common.sh"
+    taskmngr1.vm.provision "shell", path: "../scripts/hosts.sh"
+    taskmngr1.vm.provision "shell", path: "../scripts/taskmngr-common.sh"
+    taskmngr1.vm.provision "shell", path: "../scripts/taskmngr1.sh"
   end
 
   config.vm.define "taskmngr2" do |taskmngr2|
@@ -87,7 +88,8 @@ Vagrant.configure(2) do |config|
       vb.cpus = 2
     end
     taskmngr2.vm.network "private_network", ip: "192.168.59.3"
-    taskmngr2.vm.provision "shell", path: "taskmngr-common.sh"
+    taskmngr1.vm.provision "shell", path: "../scripts/hosts.sh"
+    taskmngr2.vm.provision "shell", path: "../scripts/taskmngr-common.sh"
   end
 
   # config.vm.provision "shell", inline: <<-SHELL
