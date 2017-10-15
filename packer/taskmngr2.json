@@ -3,7 +3,7 @@
     {
       "accelerator": "kvm",
       "boot_command": [
-        "<up><wait><tab><wait> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/taskmngr1.cfg<enter><wait>"
+        "<up><wait><tab><wait> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/taskmngr2.cfg<enter><wait>"
       ],
       "boot_wait": "40s",
       "disk_interface": "virtio",
@@ -17,11 +17,11 @@
       "iso_checksum_type": "md5",
       "iso_url": "http://mirror.nsc.liu.se/centos-store/7.2.1511/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso",
       "net_device": "virtio-net",
-      "output_directory": "taskmngr1-images",
+      "output_directory": "taskmngr2-images",
       "qemuargs": [
         [
           "-m",
-          "1500M"
+          "750M"
         ],
         [
           "-smp",
@@ -36,7 +36,7 @@
       "ssh_username": "root",
       "ssh_wait_timeout": "1200s",
       "type": "qemu",
-      "vm_name": "taskmngr1.qcow2"
+      "vm_name": "taskmngr2.qcow2"
     }
   ],
   "post-processors": [],
@@ -44,10 +44,6 @@
     {
       "type": "shell",
       "script": "../scripts/taskmngr-common.sh"
-    },
-    {
-      "type": "shell",
-      "script": "../scripts/taskmngr1.sh"
     }
   ]
 }
