@@ -1,10 +1,15 @@
 #!/bin/sh -e
 
+if [ "$(id -u)" != 0 ]; then
+  echo "Should be run as root."
+  exit 1;
+fi
+
 IMAGENAME="taskmngr1.qcow2"
 IMAGE_ORIG_PATH="$(dirname "$0")/../packer/taskmngr1-images/${IMAGENAME}"
 IMAGE_QEMU_PATH="/var/lib/libvirt/images/${IMAGENAME}"
 
-sudo cp -v "${IMAGE_ORIG_PATH}" "${IMAGE_QEMU_PATH}"
+cp -fv "${IMAGE_ORIG_PATH}" "${IMAGE_QEMU_PATH}"
 virt-install \
 	-n taskmngr1 \
 	--ram=3800 \

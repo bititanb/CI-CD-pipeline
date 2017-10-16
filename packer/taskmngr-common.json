@@ -1,0 +1,45 @@
+{
+  "builders": [
+    {
+      "accelerator": "kvm",
+      "boot_command": [
+        "<up><wait><tab><wait> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/taskmngr-common.cfg<enter><wait>"
+      ],
+      "disk_interface": "virtio",
+      "disk_size": 8000,
+      "format": "qcow2",
+      "headless": true,
+      "http_directory": "docroot",
+      "http_port_max": 10089,
+      "http_port_min": 10082,
+      "iso_checksum": "88c0437f0a14c6e2c94426df9d43cd67",
+      "iso_checksum_type": "md5",
+      "iso_url": "http://mirror.nsc.liu.se/centos-store/7.2.1511/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso",
+      "net_device": "virtio-net",
+      "output_directory": "taskmngr-common-images",
+      "qemuargs": [
+        [
+          "-m",
+          "1500M"
+        ]
+      ],
+      "shutdown_command": "shutdown -P now",
+      "ssh_host_port_max": 2229,
+      "ssh_host_port_min": 2222,
+      "ssh_password": "1",
+      "ssh_port": 22,
+      "ssh_username": "root",
+      "ssh_wait_timeout": "1200s",
+      "type": "qemu",
+      "vm_name": "taskmngr-common.qcow2"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "../scripts/taskmngr-common.sh"
+    }
+  ]
+}
+
+
