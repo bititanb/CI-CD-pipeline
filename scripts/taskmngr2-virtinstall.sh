@@ -12,7 +12,8 @@ virt-install \
 	--os-variant=centos7.0 \
 	--os-type=Linux \
 	--graphics vnc,password=1,port=5901 \
-  --import \
+	--noautoconsole \
+	--import \
 	--boot hd \
 	--disk path="${IMAGE_QEMU_PATH}",bus=virtio,size=8 \
 	--network=bridge:br0 \
