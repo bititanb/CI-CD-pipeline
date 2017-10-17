@@ -14,16 +14,16 @@
 
 Гость *taskmngr2* использует bridge **br0** и MAC **64:DC:B5:5E:38:11** (меняется [здесь](../scripts/taskmngr2-virtinstall.sh)).  
 
-Создать bridge и сделать обе виртуальные машины доступными из сети по доменным именам **taskmngr1** и **taskmngr2** потребуется самостоятельно.  
+Создать bridge и убедиться, что обе виртуальные машины доступны из сети по доменным именам **taskmngr1** и **taskmngr2** потребуется самостоятельно.  
 
 #### Конфигурация DHCP и DNS
 
-Если DHCP-сервер содержит записи вида
+Если потребуется ручная конфигурация, DHCP-сервер должен содержать записи вида
 ```
 192.168.1.150   64:DC:B5:5E:38:10
 192.168.1.151   64:DC:B5:5E:38:11
 ```
-, то DNS должны быть
+тогда DNS должны быть
 ```
 taskmngr1   A 192.168.1.150
 taskmngr2   A 192.168.1.151
@@ -36,6 +36,7 @@ taskmngr2   A 192.168.1.151
 ## Сборка
 
 ```shell
+packer-io build taskmngr-common.json
 packer-io build taskmngr1.json
 packer-io build taskmngr2.json
 ```
@@ -52,8 +53,13 @@ SSH handshake errors в процессе — это норма, ждите до 
 
 ## Дебаг
 
-Выполните перед сборкой:
 ```shell
 export PACKER_LOG=1   # детальный build output
 sed -i 's/headless\": true/headless\": false/' taskmngr*.json   # GUI (требуется virt-viewer)
+
+packer-io build --force taskmngr-common.json
+packer-io build --force taskmngrN.json
+virsh shutdown taskmngrN
+virsh undefine taskmngrN
+../scripts/taskmngrN-virtinstall.sh
 ```
