@@ -9,7 +9,7 @@ node('master') {
           extensions: [[$class: 'RelativeTargetDirectory',
           relativeTargetDir: '/tmp/taskmngr-django']],
           submoduleCfg: [],
-          userRemoteConfigs: [[url: 'https://bitbucket.org/bititanb/taskmngr']]
+          userRemoteConfigs: [[url: 'https://github.com/bititanb/taskmngr']]
       ])
     // ansiblePlaybook(
     //     playbook: "/etc/ansible/taskmngr.yaml",
