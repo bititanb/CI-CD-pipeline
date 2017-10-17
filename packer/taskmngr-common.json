@@ -6,7 +6,7 @@
         "<up><wait><tab><wait> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/taskmngr-common.cfg<enter><wait>"
       ],
       "disk_interface": "virtio",
-      "disk_size": 8000,
+      "disk_size": 10000,
       "format": "qcow2",
       "headless": true,
       "http_directory": "docroot",

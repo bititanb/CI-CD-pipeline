@@ -20,6 +20,6 @@ virt-install \
 	--noautoconsole \
 	--import \
 	--boot hd \
-	--disk path="${IMAGE_QEMU_PATH}",bus=virtio,size=8 \
+	--disk path="${IMAGE_QEMU_PATH}",bus=virtio,size=10 \
 	--network=bridge:br0 \
 	--mac='64:DC:B5:5E:38:10'
