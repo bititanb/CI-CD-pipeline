@@ -1,0 +1,4 @@
+[submodule "ansible-taskmngr"]
+	path = ansible
+	url = git@github.com:bititanb/ansible-taskmngr
+	branch = master
