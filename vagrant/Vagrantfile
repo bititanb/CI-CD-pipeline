@@ -39,9 +39,13 @@ Vagrant.configure(2) do |config|
 
   config.vm.box = "bento/centos-7.2"
 
-  config.ssh.username = 'user1'
-  config.ssh.password = '1'
-  config.ssh.insert_key = true
+  # config.ssh.username = 'root'
+  # config.ssh.password = 'vagrant'
+  # config.ssh.insert_key = true
+  VAGRANT_COMMAND = ARGV[0]
+  if VAGRANT_COMMAND == "ssh"
+    config.ssh.username = 'user1'
+  end
 
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
@@ -53,8 +57,15 @@ Vagrant.configure(2) do |config|
       vb.memory = "3800"
       vb.cpus = 2
     end
-    taskmngr1.vm.network "private_network", ip: "192.168.59.2",
-      virtualbox__intnet: true
+
+    taskmngr1.vm.network "private_network", ip: "192.168.59.2"
+    taskmngr1.vm.network "forwarded_port", guest: 22, host: 38822
+    taskmngr1.vm.network "forwarded_port", guest: 80, host: 38870
+    taskmngr1.vm.network "forwarded_port", guest: 443, host: 38871
+    taskmngr1.vm.network "forwarded_port", guest: 8080, host: 38880
+    taskmngr1.vm.network "forwarded_port", guest: 8085, host: 38885
+    taskmngr1.vm.network "forwarded_port", guest: 8088, host: 38888
+
     taskmngr1.vm.provision "shell", path: "../scripts/hosts.sh"
     taskmngr1.vm.provision "shell", path: "../scripts/taskmngr-common.sh"
     taskmngr1.vm.provision "shell", path: "../scripts/taskmngr1.sh"
@@ -65,8 +76,15 @@ Vagrant.configure(2) do |config|
       vb.memory = "750"
       vb.cpus = 2
     end
-    taskmngr2.vm.network "private_network", ip: "192.168.59.3",
-      virtualbox__intnet: true
+
+    taskmngr2.vm.network "private_network", ip: "192.168.59.3"
+    taskmngr2.vm.network "forwarded_port", guest: 22, host: 38922
+    taskmngr2.vm.network "forwarded_port", guest: 80, host: 38970
+    taskmngr2.vm.network "forwarded_port", guest: 443, host: 38971
+    taskmngr2.vm.network "forwarded_port", guest: 8080, host: 38980
+    taskmngr2.vm.network "forwarded_port", guest: 8085, host: 38985
+    taskmngr2.vm.network "forwarded_port", guest: 8088, host: 38988
+
     taskmngr2.vm.provision "shell", path: "../scripts/hosts.sh"
     taskmngr2.vm.provision "shell", path: "../scripts/taskmngr-common.sh"
     taskmngr2.vm.provision "shell", path: "../scripts/taskmngr2.sh"
