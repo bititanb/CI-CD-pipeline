@@ -27,6 +27,11 @@
       "vm_name": "taskmngr2.qcow2"
     }
   ],
-  "provisioners": []
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "../scripts/taskmngr2.sh"
+    }
+  ]
 }
 
