@@ -12,13 +12,15 @@
 
 #### Развертывание
 ```batch
-cd ./vagrant
+.\scripts\hosts.bat     # от администратора, обновляет hosts
+
+cd .\vagrant
 vagrant up --provider=virtualbox
-vagrant ssh taskmngr1   # пароль: 1
+vagrant ssh taskmngr1     # пароль: 1
 sudo ansible-playbook /etc/ansible/taskmngr.yaml
 ```
 
-Теперь за сборкой, тестированием и развертыванием приложения в кластере Kubernetes можно наблюдать в Jenkins (http://taskmngr1:8080/job/taskmngr).
+После того, как Ansible завершит работу, за сборкой, тестированием и развертыванием приложения в кластере Kubernetes можно наблюдать в Jenkins (http://taskmngr1:8080/job/taskmngr).
 
 По окончанию будут доступны:
 | Сервис | Адрес | Пользователь | Пароль |
