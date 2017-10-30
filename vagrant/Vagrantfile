@@ -29,7 +29,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.define "taskmngr2" do |taskmngr2|
     taskmngr2.vm.provider "virtualbox" do |vb|
-      vb.memory = "750"
+      vb.memory = "1100"
       vb.cpus = 2
     end
 

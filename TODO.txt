@@ -1,0 +1,5 @@
+[X] Random "mkdir /var/lib/docker/overlay/504cbb9b41475b56de2a462df79c5325eb0e13994be9dc0752f1f8cadba855d9-init/merged/dev/pts: cannot allocate memory" errors. Something with docker overlayfs.
+    DONE: looks like it just were OOMs on second machine.
+[X] Https handshakes sometimes timed out for application. I suspect that this is related to Ingress, Flannel or VirtualBox networking. Plain http works nice.
+    DONE: changed to Weave, resolved.
+[ ] "Vagrant reload" breaks second node, "systemctl restart docker kubelet" helps though.
