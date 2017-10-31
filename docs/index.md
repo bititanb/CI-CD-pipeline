@@ -4,6 +4,9 @@ layout: default
 
 <iframe src="https://player.vimeo.com/video/240532809" width="960" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
+<iframe width="1024" height="768" marginheight="0" marginwidth="0" src="file:///home/user1/git/CI-CD-pipeline/reveal.js/index.html">
+  Fallback text here for unsupporting browsers, of which there are scant few.
+</iframe>
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
