@@ -4,9 +4,11 @@ layout: default
 
 <iframe src="https://player.vimeo.com/video/240532809" width="960" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-<iframe width="1024" height="768" marginheight="0" marginwidth="0" src="https://bititanb.github.io/CI-CD-pipeline-presentation/">
-  Fallback text here for unsupporting browsers, of which there are scant few.
+<iframe width="960" height="740" marginheight="0" marginwidth="0" src="http://localhost:8000">
+  Iframe can't be loaded.
 </iframe>
+
+![ERROR: Can't display image.](assets/img/vagrantup.plain.svg)
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
@@ -127,3 +129,4 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 ```
 The final element.
 ```
+
