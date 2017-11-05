@@ -66,4 +66,4 @@ sudo ansible-playbook /etc/ansible/taskmngr.yaml     # пароль: 1
 
 #### Packer/KVM
 
-[Подробнее здесь.](./packer/README.md)
+[Подробнее здесь.](./packer#Образы-для-kvm)
