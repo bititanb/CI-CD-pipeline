@@ -13,12 +13,12 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Proof-of-concept CI/CD with Jenkins, Ansible, Kubernetes
+title: Proof-of-concept CI/CD
 email: bititanc@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Полностью автоматизированное развертывание CI/CD с Jenkins, Ansible, ELK, Zabbix
-  и Django-приложением в кластере контейнеров с Kubernetes.
-  Автоматизированные пересборка/тестирование/развертывание приложения при новых коммитах.
+  Полностью автоматизированное развертывание CI/CD с Kubernetes/Docker, Jenkins, Ansible.
+  <br>
+  Автоматизированные сборка/тестирование/развертывание при новых коммитах.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb

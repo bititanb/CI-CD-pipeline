@@ -2,15 +2,69 @@
 layout: default
 ---
 
-<iframe src="https://player.vimeo.com/video/240532809" width="960" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+Демонстрация развертывания CI/CD и приложения в них (центр. мониторинг и логи как бонус).  
+Развертывание полностью автоматическое (несколько команд) с Ansible и Vagrant.  
+TODO [Быстрый старт]
 
-<iframe width="960" height="740" marginheight="0" marginwidth="0" src="http://localhost:8000">
-  Iframe can't be loaded.
-</iframe>
+## Стек
+
+| Vagrant/VirtualBox или Packer/KVM | Создание VM                                                    |
+| Ansible                           | Развертывание инфраструктуры И приложения                      |
+| Jenkins                           | Сборка/тесты/деплой с использованием Ansible[*](#ansible-note) |
+| Kubernetes/Docker                 | Контейнеризация приложения                                     |
+| Zabbix                            | Мониторинг                                                     |
+| ELK/Filebeat                      | Логирование                                                    |
+| Django/Bootstrap/Postgres/Nginx   | Приложение                                                     |
+
+Стек подобран просто по распространенности, некоторый софт я бы заменил.
+
+## Как сделано?
+
+Развертывания инфраструктуры и, при новых коммитах, приложения:
 
 ![ERROR: Can't display image.](assets/img/vagrantup.plain.svg)
 
+Т. к. это демонстрация, некоторое сделано иначе/проще, чем должно быть. К примеру, само приложение и зависимые сервисы (БД, reverse proxy, почт. сервер) находятся в одном [kubernetes pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/#what-is-a-pod), т.е. дублируются для каждой его реплики, при том БД контейнеризованы (что для боевых условий не годится).  
+
+Но иногда были и просто плохие решения, как пример — Ansible-роль вместо Groovy/shell-скриптов для сборки/тестирования/деплоя (было настолько медленно, что пришлось отключить все зависимости от других ролей, а без этого Ansible не нужен). В подобных случаях, если переделывание требовало много времени, оставлял как есть, пока работает.
+{: #ansible-note}
+
+В целом, с оглядкой на то, что это демо, сделано прилично.
+
+## Как это выглядит
+
+4-х минутный монтаж развертывания с нуля и проверки работоспособности (в реальном времени ~30-40 минут на моей машине):
+
+<iframe src="https://player.vimeo.com/video/240532809" width="960" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+## Быстрый старт
+TODO
+
+## Github
+TODO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---
 Text can be **bold**, _italic_, or ~~strikethrough~~.
+
 
 [Link to another page](another-page).
 
@@ -129,4 +183,5 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 ```
 The final element.
 ```
+-->
 
