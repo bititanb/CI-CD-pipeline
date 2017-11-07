@@ -7,6 +7,7 @@
 * [Packer](https://github.com/hashicorp/packer)
 * QEMU-KVM
 * virt-install
+* 4.9 ГБ свободной оперативной памяти
 
 ### Подготовка сети
 

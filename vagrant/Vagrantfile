@@ -22,9 +22,11 @@ Vagrant.configure(2) do |config|
 
     taskmngr1.vm.network "private_network", ip: "192.168.59.2"
 
+    # sample(taskmngr1-scripts)
     taskmngr1.vm.provision "shell", path: "../scripts/hosts.sh"
     taskmngr1.vm.provision "shell", path: "../scripts/taskmngr-common.sh"
     taskmngr1.vm.provision "shell", path: "../scripts/taskmngr1.sh"
+    # end-sample
   end
 
   config.vm.define "taskmngr2" do |taskmngr2|
@@ -35,8 +37,10 @@ Vagrant.configure(2) do |config|
 
     taskmngr2.vm.network "private_network", ip: "192.168.59.3"
 
+    # sample(taskmngr2-scripts)
     taskmngr2.vm.provision "shell", path: "../scripts/hosts.sh"
     taskmngr2.vm.provision "shell", path: "../scripts/taskmngr-common.sh"
     taskmngr2.vm.provision "shell", path: "../scripts/taskmngr2.sh"
+    # end-sample
   end
 end
