@@ -37,6 +37,13 @@ TODO [Быстрый старт]
 
 <iframe src="https://player.vimeo.com/video/240532809" width="960" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
+## Более подробный обзор
+
+<iframe width="960" height="740" marginheight="0" marginwidth="0" src="http://localhost:8000">
+  Iframe can't be loaded.
+</iframe>
+
+
 ## Быстрый старт
 TODO
 
