@@ -1,4 +1,9 @@
-## Быстрый старт
+Связанные репозитории:
+* https://github.com/bititanb/ansible-taskmngr
+* https://github.com/bititanb/taskmngr
+
+## Быстрый старт с Vagrant/VirtualBox
+> Развертывание с Packer/KVM [описано здесь](./packer/) (требуется дополнительная конфигурация)
 
 ### Требования
 * Vagrant 2.0 (https://releases.hashicorp.com/vagrant/2.0.0/)
@@ -45,7 +50,7 @@ sudo ansible-playbook /etc/ansible/taskmngr.yaml     # пароль: 1
 
 | Сервис | Доступ | Пользователь | Пароль |
 | ----- | ----- | :-----: | :-----: |
-| Приложение (production) | [taskmngr1:443](https://taskmngr1) | - | - |
+| Приложение (production) | [https://taskmngr1:443](https://taskmngr1:443) | - | - |
 | Приложение (testing) | [testing.taskmngr1:80](http://testing.taskmngr1) | - | - |
 | Jenkins | [taskmngr1:8080](http://taskmngr1:8080/job/taskmngr) | admin | admin |
 | Kibana | [taskmngr1:8085](http://taskmngr1:8085/app/kibana#/settings/indices/filebeat-*?_g=%28time:%28from:now-24h%29%29)<br>(нажмите <img src="./res/defaultindexbutton.png" height="20px"/> и *Discover* для логов) | - | - |
@@ -57,48 +62,6 @@ sudo ansible-playbook /etc/ansible/taskmngr.yaml     # пароль: 1
 | taskmngr1 | # ssh user1@taskmngr1 | user1 | 1 |
 | taskmngr2 | # ssh user1@taskmngr2 | user1 | 1 |
 
-## Развертывание (подробнее)
-
-### Создание виртуальных машин
-
-#### Vagrant/VirtualBox (рекомендуется)
-
-[Описано выше.](#Требования)
-
-#### Packer/KVM
-
-[Описано здесь.](./packer#Образы-для-kvm)
-
-### Развертывание
-
-#### Vagrant/VirtualBox
-
-[Описано выше.](#Развертывание)
-
-#### Packer/KVM
-
-```shell
-ssh user1@taskmngr1                                  # пароль: 1
-sudo ansible-playbook /etc/ansible/taskmngr.yaml     # пароль: 1
-```
-
-### Доступные сервисы
-
-[Описано выше.](#Доступные-сервисы)
-
-## Подробный обзор
-
-Развертывание выглядит так:
-
-### Создание виртуальных машин
-
-#### Vagrant
-
-Vagrant создает виртуальные машины в VirtualBox, и выполняет несколько shell-скриптов в них для минимальной конфигурации, необходимой для дальнейшего развертывания с Ansible. Полностью автоматизировано.
-
-#### Packer/KVM
-
-Packer автоматизированно создает образы для KVM, которые потом импортируются в него скриптами. Небольшая ручная конфигурация, тем не менее, нужна, например для DNS. [Подробнее здесь.](./packer/#Подготовка)
-
-### Развертывание инфраструктуры с Ansible
-
+### Дополнительно
+* Развертывание с [Packer/KVM](https://github.com/bititanb/CI-CD-pipeline/tree/master/packer)
+* Ansible-роль для развертывания приложения [taskmngr-kubernetes](https://github.com/bititanb/ansible-taskmngr/tree/master/roles/taskmngr-kubernetes)

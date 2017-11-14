@@ -1,15 +1,17 @@
-# Образы для KVM
+# Развертывание с Packer/KVM
+
+## Образы для KVM
 > Сборка и установка .qcow2-образов для импорта в QEMU-KVM с Packer
 
-## Подготовка
-### Зависимости
+### Подготовка
+#### Зависимости
 
 * [Packer](https://github.com/hashicorp/packer)
 * QEMU-KVM
 * virt-install
 * 4.9 ГБ свободной оперативной памяти
 
-### Подготовка сети
+#### Подготовка сети
 
 Гость *taskmngr1* по умолчанию использует bridge на хосте с именем **br0** и MAC-адрес **64:DC:B5:5E:38:10** (меняется [здесь](../scripts/taskmngr1-virtinstall.sh)).  
 
@@ -17,7 +19,7 @@
 
 Создать bridge и убедиться, что обе виртуальные машины доступны из сети по доменным именам **taskmngr1** и **taskmngr2** потребуется самостоятельно.  
 
-#### Конфигурация DHCP и DNS
+##### Конфигурация DHCP и DNS
 
 Если потребуется ручная конфигурация, DHCP-сервер должен содержать записи вида
 ```
@@ -30,11 +32,11 @@ taskmngr1   A 192.168.1.150
 taskmngr2   A 192.168.1.151
 ```
 
-#### Без конфигурации
+##### Без конфигурации
 
 Теоретически можно обойтись без bridge, но на практике пропускной способности сети может не хватить. Хотите проще, без настройки bridge и DNS — используйте [Vagrant + VirtualBox](../vagrant).
 
-## Сборка
+### Сборка
 
 ```shell
 packer-io build taskmngr-common.json
@@ -44,15 +46,7 @@ packer-io build taskmngr2.json
 
 SSH handshake errors в процессе — это норма, ждите до конца.
 
-## Установка
-
-Импорт образов в KVM:
-```shell
-../scripts/taskmngr1-virtinstall.sh
-../scripts/taskmngr2-virtinstall.sh
-```
-
-## Дебаг
+### Дебаг
 
 ```shell
 export PACKER_LOG=1   # детальный build output
@@ -64,3 +58,22 @@ virsh shutdown taskmngrN
 virsh undefine taskmngrN
 ../scripts/taskmngrN-virtinstall.sh
 ```
+
+## Развертывание, используя полученные образы
+
+### Импорт образов в KVM
+
+```shell
+../scripts/taskmngr1-virtinstall.sh
+../scripts/taskmngr2-virtinstall.sh
+```
+
+### Развертывание
+
+```shell
+ssh user1@taskmngr1                                  # пароль: 1
+sudo ansible-playbook /etc/ansible/taskmngr.yaml     # пароль: 1
+```
+
+### Доступные сервисы
+[Описано здесь.](../#Доступные-сервисы)
