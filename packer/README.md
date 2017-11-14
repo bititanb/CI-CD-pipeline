@@ -74,7 +74,9 @@ virsh undefine taskmngrN
 
 ```shell
 ssh user1@taskmngr1                                  # пароль: 1
-sudo ansible-playbook /etc/ansible/taskmngr.yaml     # пароль: 1
+
+MASTER_IP="XXX.XXX.XXX.XXX"   # IP гостя с DN taskmngr1, по умолчанию - 192.168.59.2 (Vagrant)
+sudo ansible-playbook -e kube_master_ip="${MASTER_IP}" /etc/ansible/taskmngr.yaml    # пароль: 1
 ```
 
 ### Доступные сервисы
