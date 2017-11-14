@@ -41,9 +41,9 @@ TODO [Быстрый старт]
 
 ## Более подробный обзор
 
-<iframe width="960" height="740" marginheight="0" marginwidth="0" src="http://localhost:8000">
-  Iframe can't be loaded.
-</iframe>
+<!-- <iframe width="960" height="740" marginheight="0" marginwidth="0" src="http://localhost:8000"> -->
+  <!-- Iframe can't be loaded. -->
+<!-- </iframe> -->
 
 
 ## Быстрый старт
