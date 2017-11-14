@@ -24,7 +24,7 @@ TODO [Быстрый старт]
 
 Развертывания инфраструктуры и, при новых коммитах, приложения:
 
-![ERROR: Can't display image.](assets/img/vagrantup.plain.svg)
+![ERROR: Can't display image.](/assets/img/vagrantup.plain.svg)
 
 Т. к. это демонстрация, некоторое сделано иначе/проще, чем должно быть. К примеру, само приложение и зависимые сервисы (БД, reverse proxy, почт. сервер) находятся в одном [kubernetes pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/#what-is-a-pod), т.е. дублируются для каждой его реплики, при том БД контейнеризованы (что для боевых условий не годится).  
 
