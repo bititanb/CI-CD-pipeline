@@ -45,3 +45,7 @@ defaults:
       path: "assets/img"
     values:
       image: true
+  - scope:
+      path: "assets/css"
+    values:
+      css: true
