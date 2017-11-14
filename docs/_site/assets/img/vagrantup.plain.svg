@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="297mm" height="203mm" enable-background="new" version="1.1" viewBox="0 0 297 203" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <defs>
+  <marker id="marker3772" overflow="visible" orient="auto">
+   <path transform="scale(.2) rotate(180) translate(6)" d="m0 0 5-5-17.5 5 17.5 5-5-5z" fill="#336f2d" fill-rule="evenodd" stroke="#336f2d" stroke-width="1pt"/>
+  </marker>
+  <marker id="marker3724" overflow="visible" orient="auto">
+   <path transform="scale(.2) rotate(180) translate(6)" d="m0 0 5-5-17.5 5 17.5 5-5-5z" fill="#336f2d" fill-rule="evenodd" stroke="#336f2d" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Send" overflow="visible" orient="auto">
+   <path transform="scale(.2) rotate(180) translate(6)" d="m0 0 5-5-17.5 5 17.5 5-5-5z" fill="#336f2d" fill-rule="evenodd" stroke="#336f2d" stroke-width="1pt"/>
+  </marker>
+  <marker id="marker42128" overflow="visible" orient="auto">
+   <path transform="matrix(-.2 0 0 -.2 -1.2 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#336f2d" fill-rule="evenodd" stroke="#336f2d" stroke-width="1pt"/>
+  </marker>
+  <marker id="marker42124" overflow="visible" orient="auto">
+   <path transform="matrix(-.2 0 0 -.2 -1.2 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#336f2d" fill-rule="evenodd" stroke="#336f2d" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8" overflow="visible" orient="auto">
+   <path transform="matrix(-.2 0 0 -.2 -1.2 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#406296" fill-rule="evenodd" stroke="#406296" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-4" overflow="visible" orient="auto">
+   <path transform="matrix(-.2 0 0 -.2 -1.2 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#406296" fill-rule="evenodd" stroke="#406296" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-6" overflow="visible" orient="auto">
+   <path transform="matrix(-.2 0 0 -.2 -1.2 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#406296" fill-rule="evenodd" stroke="#406296" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-7" overflow="visible" orient="auto">
+   <path transform="matrix(-.2 0 0 -.2 -1.2 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#406296" fill-rule="evenodd" stroke="#406296" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-8" overflow="visible" orient="auto">
+   <path transform="matrix(-.2 0 0 -.2 -1.2 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#406296" fill-rule="evenodd" stroke="#406296" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-83" overflow="visible" orient="auto">
+   <path transform="matrix(-.2 0 0 -.2 -1.2 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#406296" fill-rule="evenodd" stroke="#406296" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-78" overflow="visible" orient="auto">
+   <path transform="matrix(-.2 0 0 -.2 -1.2 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#406296" fill-rule="evenodd" stroke="#406296" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-78-9" overflow="visible" orient="auto">
+   <path transform="matrix(-.2 0 0 -.2 -1.2 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#406296" fill-rule="evenodd" stroke="#406296" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-78-9-5" overflow="visible" orient="auto">
+   <path transform="matrix(-.2 0 0 -.2 -1.2 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#406296" fill-rule="evenodd" stroke="#406296" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-6-4" overflow="visible" orient="auto">
+   <path transform="matrix(-.2 0 0 -.2 -1.2 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#406296" fill-rule="evenodd" stroke="#406296" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-6-4-3" overflow="visible" orient="auto">
+   <path transform="matrix(-.2 0 0 -.2 -1.2 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#406296" fill-rule="evenodd" stroke="#406296" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-6-4-0" overflow="visible" orient="auto">
+   <path transform="matrix(-.2 0 0 -.2 -1.2 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#406296" fill-rule="evenodd" stroke="#406296" stroke-width="1pt"/>
+  </marker>
+  <marker id="marker35968-8" overflow="visible" orient="auto">
+   <path transform="matrix(-.2 0 0 -.2 -1.2 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#406296" fill-rule="evenodd" stroke="#406296" stroke-width="1pt"/>
+  </marker>
+  <marker id="marker35968-8-7" overflow="visible" orient="auto">
+   <path transform="matrix(-.2 0 0 -.2 -1.2 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#406296" fill-rule="evenodd" stroke="#406296" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-48-0" overflow="visible" orient="auto">
+   <path transform="matrix(-.2 0 0 -.2 -1.2 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#406296" fill-rule="evenodd" stroke="#406296" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-48-0-4" overflow="visible" orient="auto">
+   <path transform="matrix(-.2 0 0 -.2 -1.2 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#406296" fill-rule="evenodd" stroke="#406296" stroke-width="1pt"/>
+  </marker>
+  <filter id="filter5582" x="-.011741" y="-.015252" width="1.0235" height="1.0305" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.26903111"/>
+  </filter>
+  <filter id="filter5586" x="-.011741" y="-.031814" width="1.0235" height="1.0636" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.26903111"/>
+  </filter>
+  <filter id="filter5598" x="-.011741" y="-.015252" width="1.0235" height="1.0305" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.2690311"/>
+  </filter>
+  <filter id="filter5602" x="-.011741" y="-.031286" width="1.0235" height="1.0626" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.2690311"/>
+  </filter>
+  <filter id="filter5846" x="-.0092524" y="-.044711" width="1.0185" height="1.0894" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.19161074"/>
+  </filter>
+  <filter id="filter5850" x="-.0092524" y="-.044711" width="1.0185" height="1.0894" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.19161074"/>
+  </filter>
+  <filter id="filter5854" x="-.0092524" y="-.044711" width="1.0185" height="1.0894" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.19161074"/>
+  </filter>
+  <filter id="filter5858" x="-.0092524" y="-.044711" width="1.0185" height="1.0894" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.19161074"/>
+  </filter>
+  <filter id="filter5862" x="-.0092524" y="-.044711" width="1.0185" height="1.0894" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.19161074"/>
+  </filter>
+  <filter id="filter5866" x="-.0092524" y="-.044711" width="1.0185" height="1.0894" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.19161074"/>
+  </filter>
+  <filter id="filter5870" x="-.0092524" y="-.044711" width="1.0185" height="1.0894" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.19161074"/>
+  </filter>
+  <filter id="filter5874" x="-.0092524" y="-.044711" width="1.0185" height="1.0894" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.19161074"/>
+  </filter>
+  <filter id="filter5878" x="-.0092524" y="-.044711" width="1.0185" height="1.0894" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.19161074"/>
+  </filter>
+  <filter id="filter5882" x="-.0091478" y="-.044711" width="1.0183" height="1.0894" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.19161074"/>
+  </filter>
+  <filter id="filter9570" x="-.024" y="-.024" width="1.048" height="1.048" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.11812499"/>
+  </filter>
+  <filter id="filter9570-9" x="-.024" y="-.024" width="1.048" height="1.048" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.11812499"/>
+  </filter>
+  <filter id="filter9570-2" x="-.024" y="-.024" width="1.048" height="1.048" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.11812499"/>
+  </filter>
+  <filter id="filter9570-5" x="-.024" y="-.024" width="1.048" height="1.048" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.11812499"/>
+  </filter>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g display="none">
+  <rect width="297" height="203" fill="#f1f1f1" style="paint-order:normal"/>
+ </g>
+ <g transform="translate(0,-94)">
+  <g fill="#f2e0c8">
+   <rect x="13.229" y="167.57" width="127" height="20.108" rx="7.3689" ry="10.054" style="paint-order:markers stroke fill"/>
+   <rect x="13.229" y="177.94" width="127" height="68.494" rx="0" ry="0" style="paint-order:markers stroke fill"/>
+   <rect x="160.83" y="119.74" width="127" height="20.108" rx="7.3689" ry="10.054" style="paint-order:markers stroke fill"/>
+   <rect x="160.83" y="130.1" width="127" height="135.15" rx="0" ry="0" style="paint-order:markers stroke fill"/>
+  </g>
+  <g>
+   <rect x="166.69" y="157.08" width="49.702" height="10.285" rx="0" ry="0" fill="#eed88f" filter="url(#filter5862)" stroke="#ae9e68" style="paint-order:markers stroke fill"/>
+   <rect x="167.26" y="188.82" width="49.702" height="10.285" rx="0" ry="0" fill="#eed88f" filter="url(#filter5870)" stroke="#ae9e68" style="paint-order:markers stroke fill"/>
+   <text x="176.53262" y="195.9487" fill="#000000" font-family="Helvetica" font-size="5.6444px" letter-spacing="0px" stroke-width=".79478" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25;paint-order:markers stroke fill" xml:space="preserve"><tspan x="176.53262" y="195.9487">zabbix client</tspan></text>
+   <rect x="166.69" y="204.7" width="49.702" height="10.285" rx="0" ry="0" fill="#eed88f" filter="url(#filter5874)" stroke="#ae9e68" style="paint-order:markers stroke fill"/>
+   <text x="174.66179" y="211.30374" fill="#000000" font-family="Helvetica" font-size="5.6444px" letter-spacing="0px" stroke-width=".79478" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25;paint-order:markers stroke fill" xml:space="preserve"><tspan x="174.66179" y="211.30374">filebeat (logs)</tspan></text>
+   <g>
+    <rect x="224.9" y="215.56" width="54.994" height="20.295" rx="7.3689" ry="7.9375" fill="#74d6e4" filter="url(#filter5586)" stroke="#4b8a93" style="paint-order:markers stroke fill"/>
+    <rect x="224.9" y="183.24" width="54.994" height="42.333" rx="0" ry="0" fill="#74d6e4" filter="url(#filter5582)" stroke="#4b8a93" style="paint-order:markers stroke fill"/>
+    <rect x="230.19" y="188.53" width="44.979" height="10.285" rx="0" ry="0" fill="#4bc63f" stroke="#338928" style="paint-order:markers stroke fill"/>
+    <rect x="230.94" y="209.84" width="43.479" height="10.285" rx="0" ry="0" fill="#74d6e4" stroke="#4b8a93" style="paint-order:markers stroke fill"/>
+   </g>
+  </g>
+  <g>
+   <path d="m149.75 241.15v-87.003" fill="none" stroke="#406296" stroke-linecap="square" stroke-width="1.2" style="paint-order:normal"/>
+   <path d="m166.4 140.6-50.546 0.30032" fill="none" stroke="#406296" stroke-width="1.2" style="paint-order:normal"/>
+   <rect x="166.69" y="135.91" width="49.702" height="10.285" rx="0" ry="0" fill="#5faef8" filter="url(#filter5858)" stroke="#2f577d" style="paint-order:markers stroke fill"/>
+  </g>
+  <g fill="none" stroke="#406296" stroke-width="1.2">
+   <path d="m150.3 161.77h14.376" marker-end="url(#Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8)" style="paint-order:normal"/>
+   <path d="m150.3 193.81h14.878" marker-end="url(#Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-6)" style="paint-order:normal"/>
+   <path d="m150.3 209.69h14.37" marker-end="url(#Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-7)" style="paint-order:normal"/>
+  </g>
+  <g>
+   <g>
+    <rect x="19.089" y="215.21" width="54.994" height="20.638" rx="7.3689" ry="7.9375" fill="#74d6e4" filter="url(#filter5602)" stroke="#4b8a93" style="paint-order:markers stroke fill"/>
+    <rect x="19.089" y="183.23" width="54.994" height="42.333" rx="0" ry="0" fill="#74d6e4" filter="url(#filter5598)" stroke="#4b8a93" style="paint-order:markers stroke fill"/>
+    <rect x="23.812" y="204.69" width="44.979" height="10.285" rx="0" ry="0" fill="#4bc63f" stroke="#338928" style="paint-order:markers stroke fill"/>
+    <rect x="23.812" y="188.82" width="44.979" height="10.285" rx="0" ry="0" fill="#4bc63f" stroke="#338928" style="paint-order:markers stroke fill"/>
+   </g>
+   <g font-family="Helvetica" font-size="5.6444px" letter-spacing="0px" word-spacing="0px">
+    <text x="30.606226" y="211.29729" fill="#010101" stroke-width=".81193" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25;paint-order:markers stroke fill" xml:space="preserve"><tspan x="30.606226" y="211.29729">app (testing)</tspan></text>
+    <text x="25.627779" y="232.27989" fill="#000000" stroke-width=".79478" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25;paint-order:markers stroke fill" xml:space="preserve"><tspan x="25.627779" y="232.27989">kubernetes pods</tspan></text>
+    <text x="33.268597" y="195.42229" fill="#010101" stroke-width=".81193" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25;paint-order:markers stroke fill" xml:space="preserve"><tspan x="33.268597" y="195.42229">app (prod)</tspan></text>
+   </g>
+  </g>
+  <g fill="none" stroke="#406296" stroke-width="1.2">
+   <path d="m82.305 230.85h-6.3984" marker-end="url(#Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-78)" style="paint-order:normal"/>
+   <path d="m216.4 230.56h6.6658" marker-end="url(#Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-78-9)" style="paint-order:normal"/>
+   <path d="m214.37 227.86 14.192-11.578" marker-end="url(#Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-78-9-5)" style="paint-order:normal"/>
+  </g>
+  <rect x="166.69" y="225.87" width="49.702" height="10.285" rx="0" ry="0" fill="#74d6e4" filter="url(#filter5878)" stroke="#4b8a93" style="paint-order:markers stroke fill"/>
+  <path d="m150.3 230.85h14.371" fill="none" marker-end="url(#Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-8)" stroke="#406296" stroke-width="1.2" style="paint-order:normal"/>
+  <g>
+   <g>
+    <rect x="166.69" y="246.74" width="50.271" height="10.285" rx="0" ry="0" fill="#4bc63f" filter="url(#filter5882)" stroke="#235e1c" style="paint-order:markers stroke fill"/>
+    <text transform="scale(1.0057 .99433)" x="182.18152" y="254.74117" fill="#000000" font-family="Helvetica" font-size="5.6444px" letter-spacing="0px" stroke-width="3.7807" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25;paint-order:markers stroke fill" xml:space="preserve"><tspan x="182.18152" y="254.74117" fill="#000000" font-family="Helvetica" font-size="5.6444px" stroke-width="3.7807" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal">jenkins</tspan></text>
+    <rect x="108.48" y="265.85" width="39.688" height="17.916" rx="0" ry="0" fill="#3f3f3f" stroke="#5dcc53" stroke-width="1.3" style="paint-order:markers fill stroke"/>
+   </g>
+   <text x="113.09423" y="272.74573" fill="#f5f5f5" font-family="Helvetica" font-size="5.6444px" letter-spacing="0px" stroke-width="3.7807" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="113.09423" y="272.74573"># git commit</tspan><tspan x="113.09423" y="279.80127"># git push</tspan></text>
+  </g>
+  <g transform="translate(-195.79 -7.6458)">
+   <rect x="214.31" y="278.19" width="76.729" height="10.583" rx="0" ry="0" fill="#3f3f3f" stroke="#5dcc53" stroke-width="1.3" style="paint-order:markers fill stroke"/>
+   <text x="220.38828" y="285.09146" fill="#f5f5f5" font-family="Helvetica" font-size="5.6444px" letter-spacing=".25636px" stroke-width="3.7807" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="220.38828" y="285.09146" letter-spacing="0px"># git clone ${APP_REPO}</tspan></text>
+  </g>
+  <path d="m149.38 241.17 15.119 4.6922" fill="none" marker-end="url(#Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-83)" stroke="#406296" stroke-width="1.2" style="paint-order:normal"/>
+  <g>
+   <rect x="44.993" y="104.04" width="52.502" height="10.583" rx="0" ry="0" fill="#3f3f3f" stroke="#639aea" stroke-width="1.5" style="paint-order:markers fill stroke"/>
+   <circle cx="47.055" cy="102.07" r="5.9062" fill="#74b9e4" filter="url(#filter9570)" stroke-width="0" style="paint-order:normal"/>
+   <text x="55.630497" y="110.78782" fill="#f5f5f5" font-family="Helvetica" font-size="5.6444px" letter-spacing="0px" stroke-width="3.7807" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="55.630497" y="110.78782"># vagrant up</tspan></text>
+  </g>
+  <g transform="translate(-1.1806e-5 15.875)">
+   <rect x="34.396" y="132.96" width="95.25" height="10.583" rx="0" ry="0" fill="#3f3f3f" stroke="#639aea" stroke-width="1.5" style="paint-order:markers fill stroke"/>
+   <text x="41.374229" y="139.71071" fill="#f5f5f5" font-family="Helvetica" font-size="5.6444px" letter-spacing=".33886px" stroke-width="3.6626" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="41.374229" y="139.71071" letter-spacing="0px"># ansible-playbook playbook.yml</tspan></text>
+  </g>
+  <g fill="#000000" font-family="Helvetica" font-size="5.6444px" letter-spacing="0px" word-spacing="0px">
+   <text x="56.692474" y="175.30136" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="56.692474" y="175.30136">taskmngr2 (VM)</tspan></text>
+   <text x="204.29056" y="127.33887" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="204.29056" y="127.33887">taskmngr1 (VM)</tspan></text>
+   <text x="182.60342" y="142.62047" stroke-width="3.7807" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25;paint-order:markers stroke fill" xml:space="preserve"><tspan x="182.60342" y="142.62047">ansible</tspan></text>
+   <text x="169.40303" y="232.65475" stroke-width="3.7807" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25;paint-order:markers stroke fill" xml:space="preserve"><tspan x="169.40303" y="232.65475" font-size="5.2917px">kubernetes master</tspan></text>
+  </g>
+  <g>
+   <rect x="82.589" y="188.22" width="49.702" height="10.285" rx="0" ry="0" fill="#eed88f" filter="url(#filter5854)" stroke="#ae9e68" style="paint-order:markers stroke fill"/>
+   <text x="91.865982" y="195.16537" fill="#000000" font-family="Helvetica" font-size="5.6444px" letter-spacing="0px" stroke-width=".79478" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25;paint-order:markers stroke fill" xml:space="preserve"><tspan x="91.865982" y="195.16537">zabbix client</tspan></text>
+   <rect x="82.589" y="204.4" width="49.702" height="10.285" rx="0" ry="0" fill="#eed88f" filter="url(#filter5850)" stroke="#ae9e68" style="paint-order:markers stroke fill"/>
+   <text x="90.563728" y="210.99918" fill="#000000" font-family="Helvetica" font-size="5.6444px" letter-spacing="0px" stroke-width=".79478" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25;paint-order:markers stroke fill" xml:space="preserve"><tspan x="90.563728" y="210.99918">filebeat (logs)</tspan></text>
+   <rect x="82.589" y="225.86" width="49.702" height="10.285" rx="0" ry="0" fill="#74d6e4" filter="url(#filter5846)" stroke="#4b8a93" style="paint-order:markers stroke fill"/>
+   <g font-family="Helvetica" font-size="5.6444px" letter-spacing="0px" word-spacing="0px">
+    <text x="86.331764" y="232.63133" fill="#000000" stroke-width="3.7807" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25;paint-order:markers stroke fill" xml:space="preserve"><tspan x="86.331764" y="232.63133">kubernetes node</tspan></text>
+    <text x="231.43419" y="232.59261" fill="#000000" stroke-width=".79478" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25;paint-order:markers stroke fill" xml:space="preserve"><tspan x="231.43419" y="232.59261">kubernetes pods</tspan></text>
+    <text x="239.64357" y="195.13062" fill="#010101" stroke-width=".81193" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25;paint-order:markers stroke fill" xml:space="preserve"><tspan x="239.64357" y="195.13062">app (prod)</tspan></text>
+    <text x="237.26418" y="216.77431" fill="#010101" stroke-width=".81193" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25;paint-order:markers stroke fill" xml:space="preserve"><tspan x="237.26418" y="216.77431">k8s services</tspan></text>
+   </g>
+   <rect x="167.26" y="172.94" width="49.702" height="10.285" rx="0" ry="0" fill="#eed88f" filter="url(#filter5866)" stroke="#ae9e68" style="paint-order:markers stroke fill"/>
+   <text x="186.55096" y="180.10677" fill="#000000" font-family="Helvetica" font-size="5.6444px" letter-spacing="0px" stroke-width="3.7807" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25;paint-order:markers stroke fill" xml:space="preserve"><tspan x="186.55096" y="180.10677">ELK</tspan></text>
+  </g>
+  <path d="m150.3 177.65h14.878" fill="none" marker-end="url(#Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-4)" stroke="#406296" stroke-width="1.2" style="paint-order:normal"/>
+  <text x="183.34067" y="164.01807" fill="#000000" font-family="Helvetica" font-size="5.6444px" letter-spacing="0px" stroke-width="3.7807" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25;paint-order:markers stroke fill" xml:space="preserve"><tspan x="183.34067" y="164.01807">zabbix</tspan></text>
+  <g fill="none">
+   <g stroke="#406296">
+    <g stroke-width="1.2">
+     <path d="m149.2 193.81h-14.912" enable-background="new" marker-end="url(#Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-6-4)" style="paint-order:normal"/>
+     <path d="m149.2 209.69h-14.912" enable-background="new" marker-end="url(#Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-6-4-3)" style="paint-order:normal"/>
+     <path d="m149.2 230.85h-14.912" enable-background="new" marker-end="url(#Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-6-4-0)" style="paint-order:normal"/>
+    </g>
+    <g stroke-width="1.2">
+     <path d="m256.67 108.54v9.7342" enable-background="new" marker-end="url(#marker35968-8)" opacity=".54942" style="paint-order:normal"/>
+     <path d="m98.245 109.15h157.82" opacity=".54942" style="paint-order:normal"/>
+     <path d="m18.521 108.54v57.123" enable-background="new" marker-end="url(#marker35968-8-7)" opacity=".54942" style="paint-order:normal"/>
+     <path d="m19.114 109.15 25.128 1e-5" enable-background="new" opacity=".54942" style="paint-order:normal"/>
+    </g>
+   </g>
+   <g stroke="#42903a" stroke-width="1.2">
+    <path d="m217.24 251.73h74.349" style="paint-order:normal"/>
+    <path d="m291.04 252.28v-58.758" style="paint-order:normal"/>
+    <path d="m291.59 193.52h-13.813" marker-end="url(#Arrow1Send)" style="paint-order:normal"/>
+    <path d="m177.27 276.38v-17.098" marker-end="url(#marker42128)" style="paint-order:normal"/>
+    <path d="m95.9 275.83h10.196" marker-end="url(#marker42124)" style="paint-order:normal"/>
+    <path d="m7.9375 252.02h158.47" enable-background="new" style="paint-order:normal"/>
+    <path d="m7.9375 252.57v-59.308" enable-background="new" style="paint-order:normal"/>
+    <path d="m7.478 193.81h13.606" enable-background="new" marker-end="url(#marker3772)" style="paint-order:normal"/>
+    <path d="m7.478 209.69h13.571" enable-background="new" marker-end="url(#marker3724)" style="paint-order:normal"/>
+    <path d="m148.17 275.83h29.104" enable-background="new" style="paint-order:normal"/>
+   </g>
+  </g>
+  <text x="70.780281" y="132.50256" enable-background="new" fill="#000000" font-family="Helvetica" font-size="5.6444px" letter-spacing="0px" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="70.780281" y="132.50256">развертывание инфраструктуры</tspan></text>
+  <text x="118.52991" y="105.40812" enable-background="new" fill="#000000" font-family="Helvetica" font-size="5.6444px" letter-spacing="0px" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="118.52991" y="105.40812">создание виртуальных машин</tspan></text>
+  <path d="m130.4 154.42 19.897-0.29167" enable-background="new" fill="none" stroke="#406296" stroke-width="1.2" style="paint-order:normal"/>
+  <path d="m116.42 140.9v5.7367" enable-background="new" fill="none" marker-end="url(#Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-48-0)" stroke="#406296" stroke-width="1.2" style="paint-order:normal"/>
+  <text x="42.618782" y="258.81799" enable-background="new" fill="#000000" font-family="Helvetica" font-size="5.6444px" letter-spacing="0px" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="42.618782" y="258.81799">сборка/развертывание приложения</tspan></text>
+  <g fill="none" stroke="#406296">
+   <path d="m190.67 125.29-129.31 0.29166" enable-background="new" stroke-width="1.2" style="paint-order:normal"/>
+   <path d="m61.961 115.37v9.6521" enable-background="new" stroke-width="1.2" style="paint-order:normal"/>
+   <path d="m190.67 124.74v9.0572" enable-background="new" marker-end="url(#Arrow1Send-2-3-5-2-1-0-2-20-1-0-0-0-8-48-0-4)" stroke-width="1.2" style="paint-order:normal"/>
+  </g>
+  <g stroke-width="0">
+   <circle cx="34.604" cy="147.84" r="5.9062" fill="#74b9e4" filter="url(#filter9570-9)" style="paint-order:normal"/>
+   <circle cx="18.296" cy="282.28" r="5.9062" fill="#5bd960" filter="url(#filter9570-2)" style="paint-order:normal"/>
+   <circle cx="107.79" cy="285.47" r="5.9062" fill="#5bd960" filter="url(#filter9570-5)" style="paint-order:normal"/>
+  </g>
+  <g fill="#000000" font-family="Helvetica" font-size="7.0556px" font-weight="bold" letter-spacing="0px" word-spacing="0px">
+   <text x="32.751915" y="150.33807" style="line-height:1.25" xml:space="preserve"><tspan x="32.751915" y="150.33807" font-size="7.0556px">2</tspan></text>
+   <g>
+    <text x="44.956104" y="104.55447" enable-background="new" style="line-height:1.25" xml:space="preserve"><tspan x="44.956104" y="104.55447" font-size="7.0556px">1</tspan></text>
+    <text x="16.268604" y="284.90237" enable-background="new" style="line-height:1.25" xml:space="preserve"><tspan x="16.268604" y="284.90237" font-size="7.0556px">3</tspan></text>
+    <text x="105.56548" y="287.90454" enable-background="new" style="line-height:1.25" xml:space="preserve"><tspan x="105.56548" y="287.90454" font-size="7.0556px">4</tspan></text>
+   </g>
+  </g>
+ </g>
+</svg>

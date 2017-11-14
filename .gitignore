@@ -147,7 +147,6 @@ packer_cache/
 # Created by https://www.gitignore.io/api/ruby,jekyll
 
 ### Jekyll ###
-_site/
 .sass-cache/
 .jekyll-metadata
 
