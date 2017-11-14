@@ -2,8 +2,6 @@
 layout: default
 ---
 
-baseurl: /CI-CD-pipeline
-
 ## Что это?
 
 Proof-of-Concept автоматизированного развертывания CI/CD и приложения в нём.<br>

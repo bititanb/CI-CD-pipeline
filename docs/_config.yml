@@ -17,7 +17,7 @@ title: CI/CD демо
 email: bititanc@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Полностью автоматизированное развертывание CI/CD с Kubernetes/Docker, Jenkins, Ansible.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "CI-CD-pipeline" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username:  bititanb
