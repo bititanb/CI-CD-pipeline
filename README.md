@@ -1,3 +1,5 @@
+[Сайт с общим описанием](https://bititanb.github.io/CI-CD-pipeline)
+
 Связанные репозитории:
 * https://github.com/bititanb/ansible-taskmngr
 * https://github.com/bititanb/taskmngr

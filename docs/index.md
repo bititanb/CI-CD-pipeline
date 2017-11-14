@@ -4,58 +4,63 @@ layout: default
 
 ## Что это?
 
-Proof-of-Concept автоматизированного развертывания CI/CD и приложения в нём.<br>
-Развертывание полностью автоматическое ([быстрый старт с Vagrant](https://github.com/bititanb/CI-CD-pipeline)).
-TODO [Быстрый старт]
+{: align="justify"}
+Proof-of-Concept развертывания CI/CD, приложения в нём и централизованных мониторинга и логирования. Развертывание полностью автоматическое.
+
+[Быстрый старт с Vagrant](https://github.com/bititanb/CI-CD-pipeline#Быстрый-старт-с-vagrantvirtualbox)
 
 ## Стек
+> Подобран просто по распространенности.
 
-| Vagrant/VirtualBox или Packer/KVM | Создание VM                                                    |
-| Ansible                           | Развертывание инфраструктуры И приложения                      |
-| Jenkins                           | Сборка/тесты/деплой с использованием Ansible[*](#ansible-note) |
-| Kubernetes/Docker                 | Контейнеризация приложения                                     |
-| Zabbix                            | Мониторинг                                                     |
-| ELK/Filebeat                      | Логирование                                                    |
-| Django/Bootstrap/Postgres/Nginx   | Приложение                                                     |
+| Vagrant/VirtualBox или Packer/KVM | Создание VM                                     |
+| Ansible                           | Развертывание инфраструктуры и приложения       |
+| Jenkins                           | Сборка/тесты/деплой с Ansible[*](#ansible-note) |
+| Kubernetes/Docker                 | Кластер контейнеров для приложения              |
+| Django/Bootstrap/Postgres/Nginx   | Приложение                                      |
+| Zabbix                            | Мониторинг                                      |
+| ELK/Filebeat                      | Логирование                                     |
 
-Стек подобран просто по распространенности, некоторый софт я бы заменил.
 
 ## Как сделано?
 
-Развертывания инфраструктуры и, при новых коммитах, приложения:
+Развертывание инфраструктуры и, при новых коммитах, приложения:
 
-![Add Remove Programs]({{'/assets/img/vagrantup.plain.svg' | absolute_url}} "Add Remove Programs")
-![ERROR: Can't display image.](/assets/img/vagrantup.plain.svg)
+![](/assets/img/vagrantup.plain.svg)
 
-Т. к. это демонстрация, некоторое сделано иначе/проще, чем должно быть. К примеру, само приложение и зависимые сервисы (БД, reverse proxy, почт. сервер) находятся в одном [kubernetes pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/#what-is-a-pod), т.е. дублируются для каждой его реплики, при том БД контейнеризованы (что для боевых условий не годится).  
+{: align="justify"}
+Т. к. это демонстрация, некоторое сделано иначе/проще, чем должно быть. К примеру, само приложение и зависимые сервисы (БД, reverse proxy, почтовый сервер) находятся в одном [kubernetes pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/#what-is-a-pod), т.е. дублируются для каждой его реплики, притом БД контейнеризованы (что для боевых условий не годится).  
 
-Но иногда были и просто плохие решения, как пример — Ansible-роль вместо Groovy/shell-скриптов для сборки/тестирования/деплоя (было настолько медленно, что пришлось отключить все зависимости от других ролей, а без этого Ansible не нужен). В подобных случаях, если переделывание требовало много времени, оставлял как есть, пока работает.
+{: align="justify"}
+Иногда были и просто плохие решения, как пример — Ansible-роль вместо Groovy/shell-скриптов для сборки/тестирования/деплоя (было настолько медленно, что пришлось отключить все зависимости от других ролей, а без этого Ansible не нужен). В подобных случаях, если переделывание требовало много времени, оставлял как есть, пока работает.
 {: #ansible-note}
 
 В целом, с оглядкой на то, что это демо, сделано прилично.
 
+<div class="intrinsic-container intrinsic-container-4x3">
+  <iframe marginheight="0" marginwidth="0" src="https://bititanb.github.io/CI-CD-pipeline-presentation" allowfullscreen></iframe>
+  <!-- <iframe marginheight="0" marginwidth="0" src="http://localhost:8000" allowfullscreen></iframe> -->
+</div>
+<!-- <iframe width="960" height="740" marginheight="0" marginwidth="0" src="http://localhost:8000"></iframe> -->
+
 ## Как это выглядит
 
+{: align="justify"}
 4-х минутный монтаж развертывания с нуля и проверки работоспособности (в реальном времени ~30-40 минут на моей машине):
 
-<iframe src="https://player.vimeo.com/video/240532809" width="960" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<div class="intrinsic-container intrinsic-container-16x9">
+  <iframe src="https://player.vimeo.com/video/240532809" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+<!-- <iframe src="https://player.vimeo.com/video/240532809" width="960" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
 
-## Более подробный обзор
+## Далее
 
-<!-- <iframe width="960" height="740" marginheight="0" marginwidth="0" src="http://localhost:8000"> -->
-  <!-- Iframe can't be loaded. -->
-<!-- </iframe> -->
+[Как развернуть у себя (Windows/Linux)](https://github.com/bititanb/CI-CD-pipeline#Быстрый-старт-с-vagrantvirtualbox)  
+[Альтернативное развертывание с Packer/KVM (Linux)](https://github.com/bititanb/CI-CD-pipeline/tree/master/packer#Развертывание-с-packerkvm)
 
-
-## Быстрый старт
-TODO
-
-## Github
-TODO
-
-
-
-
+[Основной репозиторий](https://github.com/bititanb/CI-CD-pipeline)  
+[Репозиторий с Ansible](https://github.com/bititanb/ansible-taskmngr)  
+[Репозиторий с приложением](https://github.com/bititanb/taskmngr)  
+[Playbook для приложения](https://github.com/bititanb/ansible-taskmngr/tree/master/roles/taskmngr-kubernetes)  
 
 
 
