@@ -1,11 +1,11 @@
-[Сайт с общим описанием](https://bititanb.github.io/CI-CD-pipeline)
+Сайт с общим описанием [здесь](https://bititanb.github.io/CI-CD-pipeline).
 
 Связанные репозитории:
 * https://github.com/bititanb/ansible-taskmngr
 * https://github.com/bititanb/taskmngr
 
 ## Быстрый старт с Vagrant/VirtualBox
-> Развертывание с Packer/KVM [описано здесь](./packer/) (требуется дополнительная конфигурация)
+> Развертывание с Packer/KVM [описано здесь](./packer#Развертывание-с-packerkvm) (требуется дополнительная конфигурация)
 
 ### Требования
 * Vagrant 2.0 (https://releases.hashicorp.com/vagrant/2.0.0/)
