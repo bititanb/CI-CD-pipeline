@@ -65,5 +65,5 @@ sudo ansible-playbook /etc/ansible/taskmngr.yaml     # пароль: 1
 | taskmngr2 | # ssh user1@taskmngr2 | user1 | 1 |
 
 ### Дополнительно
-* Развертывание с [Packer/KVM](https://github.com/bititanb/CI-CD-pipeline/tree/master/packer)
+* Развертывание с [Packer/KVM](./packer#Развертывание-с-packerkvm)
 * Ansible-роль для развертывания приложения [taskmngr-kubernetes](https://github.com/bititanb/ansible-taskmngr/tree/master/roles/taskmngr-kubernetes)
