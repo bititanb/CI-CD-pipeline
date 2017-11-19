@@ -6,5 +6,5 @@
 ```shell
 gem install bundler
 bundle install
-bundle exec jekyll serve -w
+bundle exec jekyll serve -w --baseurl ""
 ```
