@@ -27,8 +27,19 @@ body {
   }
 }
 
-#gh-icon {
+.gh-icon {
   height: 25px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+img[alt=gh-icon-black] {
+  height: 1.6rem;
+  vertical-align: middle;
+  margin-right: 0.2rem;
+}
+
+.github-link {
   vertical-align: middle;
 }
 

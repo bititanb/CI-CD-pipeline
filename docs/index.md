@@ -7,7 +7,8 @@ layout: default
 {: align="justify"}
 Proof-of-Concept развертывания CI/CD, приложения в нём и централизованных мониторинга и логирования. Достаточно одной машины с 5 ГБ ОЗУ, гипервизора на ней и часа времени. Развертывание полностью автоматическое.
 
-[Быстрый старт с Vagrant](https://github.com/bititanb/CI-CD-pipeline#Быстрый-старт-с-vagrantvirtualbox)
+![gh-icon-black]({{ site.baseurl }}/assets/img/github-icon-black.svg)
+[**Быстрый старт с Vagrant**](https://github.com/bititanb/CI-CD-pipeline#Быстрый-старт-с-vagrantvirtualbox){: .github-link}
 
 ## Стек
 
@@ -18,8 +19,6 @@ Proof-of-Concept развертывания CI/CD, приложения в нё�
 | Django/Bootstrap                  | Приложение                                      |
 | Zabbix                            | Мониторинг                                      |
 | ELK                               | Логирование                                     |
-
-*Подобран просто по распространенности.*
 
 ## Как сделано?
 
@@ -51,10 +50,16 @@ Proof-of-Concept развертывания CI/CD, приложения в нё�
 
 ## Далее
 
-[Как развернуть у себя (Windows/Linux)](https://github.com/bititanb/CI-CD-pipeline#Быстрый-старт-с-vagrantvirtualbox)  
-[Альтернативное развертывание с Packer/KVM (Linux)](https://github.com/bititanb/CI-CD-pipeline/tree/master/packer#Развертывание-с-packerkvm)
+![gh-icon-black]({{ site.baseurl }}/assets/img/github-icon-black.svg)
+[Как развернуть у себя (Windows/Linux)](https://github.com/bititanb/CI-CD-pipeline#Быстрый-старт-с-vagrantvirtualbox){: .github-link}  
+![gh-icon-black]({{ site.baseurl }}/assets/img/github-icon-black.svg)
+[Альтернативное развертывание с Packer/KVM (Linux)](https://github.com/bititanb/CI-CD-pipeline/tree/master/packer#Развертывание-с-packerkvm){: .github-link}
 
-[Основной репозиторий на GitHub](https://github.com/bititanb/CI-CD-pipeline)  
-[Репозиторий с Ansible](https://github.com/bititanb/ansible-taskmngr)  
-[Репозиторий с приложением](https://github.com/bititanb/taskmngr)  
-[Playbook для приложения](https://github.com/bititanb/ansible-taskmngr/tree/master/roles/taskmngr-kubernetes)  
+![gh-icon-black]({{ site.baseurl }}/assets/img/github-icon-black.svg)
+[Основной репозиторий на GitHub](https://github.com/bititanb/CI-CD-pipeline){: .github-link}  
+![gh-icon-black]({{ site.baseurl }}/assets/img/github-icon-black.svg)
+[Репозиторий с Ansible](https://github.com/bititanb/ansible-taskmngr){: .github-link}  
+![gh-icon-black]({{ site.baseurl }}/assets/img/github-icon-black.svg)
+[Репозиторий с приложением](https://github.com/bititanb/taskmngr){: .github-link}  
+![gh-icon-black]({{ site.baseurl }}/assets/img/github-icon-black.svg)
+[Playbook для приложения](https://github.com/bititanb/ansible-taskmngr/tree/master/roles/taskmngr-kubernetes){: .github-link}  
