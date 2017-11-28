@@ -67,3 +67,11 @@ sudo ansible-playbook /etc/ansible/taskmngr.yaml     # пароль: 1
 ### Дополнительно
 * Развертывание с [Packer/KVM](./packer#Развертывание-с-packerkvm)
 * Ansible-роль для развертывания приложения [taskmngr-kubernetes](https://github.com/bititanb/ansible-taskmngr/tree/master/roles/taskmngr-kubernetes)
+
+### Changelog
+
+#### 1.0.1 — 27.11.17
+##### Updated
+* ./scripts/hosts.bat rewritten (fixed some bugs as well)
+#### 1.0.0 — 26.11.17
+
