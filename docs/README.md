@@ -1,4 +1,4 @@
-# Сайт для [CI-CD-pipeline](https://github.com/bititanb/CI-CD-pipeline)
+# Сайт для [CI-CD-pipeline](https://github.com/ilya-lesikov/CI-CD-pipeline)
 > Статический сайт с Jekyll
 
 ## Старт

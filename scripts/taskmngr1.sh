@@ -3,7 +3,7 @@
 # setup ansible
 yum install -y git ansible sshpass
 rm -rf /etc/ansible
-git clone https://github.com/bititanb/ansible-taskmngr /etc/ansible
+git clone https://github.com/ilya-lesikov/ansible-taskmngr /etc/ansible
 chmod -R g=u,o=u /etc/ansible
 
 # add jenkins user for jenkins master server

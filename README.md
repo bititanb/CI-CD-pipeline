@@ -1,8 +1,14 @@
-Сайт с общим описанием [здесь](https://bititanb.github.io/CI-CD-pipeline).
+---
+### 2020 UPDATE:
+This was done back in 2017 when I was looking for a job as a Junior Automation Engineer. \
+Now unmantained and left here for purely historical purposes.
+---
+
+Сайт с общим описанием [здесь](https://old-demo.ilya-lesikov.com).
 
 Связанные репозитории:
-* https://github.com/bititanb/ansible-taskmngr
-* https://github.com/bititanb/taskmngr
+* https://github.com/ilya-lesikov/ansible-taskmngr
+* https://github.com/ilya-lesikov/taskmngr
 
 ## Быстрый старт с Vagrant/VirtualBox
 > Развертывание с Packer/KVM [описано здесь](./packer#Развертывание-с-packerkvm) (требуется дополнительная конфигурация)
@@ -17,7 +23,7 @@
 #### Windows
 
 ```shell
-git clone https://github.com/bititanb/CI-CD-pipeline
+git clone https://github.com/ilya-lesikov/CI-CD-pipeline
 cd .\CI-CD-pipeline
 
 .\scripts\hosts.bat         # от администратора, обновляет hosts
@@ -32,7 +38,7 @@ sudo ansible-playbook /etc/ansible/taskmngr.yaml     # пароль: 1
 #### Linux
 
 ```shell
-git clone https://github.com/bititanb/CI-CD-pipeline
+git clone https://github.com/ilya-lesikov/CI-CD-pipeline
 cd ./CI-CD-pipeline
 
 sudo ./scripts/hosts.sh         # обновляет hosts
@@ -66,7 +72,7 @@ sudo ansible-playbook /etc/ansible/taskmngr.yaml     # пароль: 1
 
 ### Дополнительно
 * Развертывание с [Packer/KVM](./packer#Развертывание-с-packerkvm)
-* Ansible-роль для развертывания приложения [taskmngr-kubernetes](https://github.com/bititanb/ansible-taskmngr/tree/master/roles/taskmngr-kubernetes)
+* Ansible-роль для развертывания приложения [taskmngr-kubernetes](https://github.com/ilya-lesikov/ansible-taskmngr/tree/master/roles/taskmngr-kubernetes)
 
 ### Changelog
 

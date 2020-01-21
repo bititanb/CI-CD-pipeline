@@ -14,13 +14,13 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: CI/CD демо
-email: bititanc@gmail.com
+email: hire@lesikov.com
 description: >- # this means to ignore newlines until "baseurl:"
   Полностью автоматизированное развертывание CI/CD с Kubernetes/Docker, Jenkins, Ansible
 baseurl: "/CI-CD-pipeline" # the subpath of your site, e.g. /blog
-url: "https://bititanb.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://ilya-lesikov.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
-github_username:  bititanb
+github_username:  ilya-lesikov
 
 # Build settings
 markdown: kramdown

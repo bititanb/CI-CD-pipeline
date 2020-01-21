@@ -3,7 +3,7 @@
 ## Образы для KVM
 > Сборка .qcow2-образов для импорта в QEMU-KVM с Packer
 
-> Для развертывания без какой-либо дополнительной конфигурации используйте [Vagrant/Virtualbox](https://github.com/bititanb/CI-CD-pipeline#Быстрый-старт-с-vagrantvirtualbox)
+> Для развертывания без какой-либо дополнительной конфигурации используйте [Vagrant/Virtualbox](https://github.com/ilya-lesikov/CI-CD-pipeline#Быстрый-старт-с-vagrantvirtualbox)
 
 ### Подготовка
 #### Зависимости
@@ -80,4 +80,4 @@ sudo ansible-playbook -e kube_master_ip="${MASTER_IP}" /etc/ansible/taskmngr.yam
 ```
 
 ### Доступные сервисы
-[Описано здесь.](https://github.com/bititanb/CI-CD-pipeline#Доступные-сервисы)
+[Описано здесь.](https://github.com/ilya-lesikov/CI-CD-pipeline#Доступные-сервисы)
