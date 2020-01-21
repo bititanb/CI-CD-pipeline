@@ -3,9 +3,11 @@ layout: default
 ---
 
 ---
+
 ### 2020 UPDATE:
-This was done back in 2017 when I was looking for a job as a Junior Automation Engineer. \
+This was done back in 2017 as part of the [CI/CD demo](https://github.com/search?q=user:ilya-lesikov+topic:ci-cd-pipeline+fork:true&type=Repositories), before looking for a job as a Junior Automation Engineer. \
 Now unmantained and left here for purely historical purposes.
+
 ---
 
 ## Что это?
