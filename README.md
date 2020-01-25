@@ -6,9 +6,9 @@ Now unmantained and left here for purely historical purposes.
 
 ---
 
-Сайт с общим описанием [здесь](https://old-demo.ilya-lesikov.com).
+How and why explained [here](https://old-demo.ilya-lesikov.com).
 
-Связанные репозитории:
+Repositories that are part of this demo:
 * https://github.com/ilya-lesikov/ansible-taskmngr
 * https://github.com/ilya-lesikov/taskmngr
 
